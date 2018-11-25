@@ -1,0 +1,360 @@
+@font-face {
+    font-family: Mellony;
+    font-display: block;
+    src: url('/font/mellony.ttf');
+}
+
+@font-face {
+    font-family: Lato;
+    font-display: block;
+    src: url('/font/lato.ttf');
+}
+
+/* GLOBAL */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  background-color: #EAE7DC;
+  overflow: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 400;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("/img/noise.png");
+}
+
+/* canvas {
+  transform-origin: 50%, 50%;
+  animation-duration: 2s;
+  animation-name: fadeAndScale;
+} */
+
+@keyframes fadeAndScale {
+    from {
+        opacity: 0.5;
+        transform: scale(0.9, 0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUpDelay {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    16.7% {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: #E85A4F;
+  transition: color 0.2s;
+}
+
+#main-logo {
+  position: fixed;
+  top: 2em;
+  left: 2em;
+  width: 6em;
+  height: 6em;
+  background-color: #E85A4F;
+  z-index: 100;
+  text-align: center;
+  user-select: none;
+}
+
+#main-logo>span {
+  position: relative;
+  top: 1em;
+  color: #FFFFFF;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  font-weight: bold;
+  font-family: Mellony, sans-serif;
+}
+
+#main-menu {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  width: 3em;
+  height: 3em;
+  z-index: 200;
+  color: #FFFFFF;
+  background-color: #E85A4F;
+  text-align: center;
+}
+
+nav {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 150;
+  top: 0;
+  right: 0;
+  background-color: #E85A4F;
+  transition: 0.5s;
+}
+
+#pagination>a>div {
+  position: fixed;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: #E85A4F;
+  z-index: 100;
+  text-align: center;
+}
+
+#paginate-prev {
+  bottom: 2em;
+  right: 7em;
+}
+
+#paginate-next {
+  bottom: 2em;
+  right: 2em;
+}
+
+/* FULL SCREEN */
+#fullscreen {
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#fullscreen::-webkit-scrollbar {
+    display: none;
+}
+
+#fullscreen>section {
+  width: 100vw;
+  height: 100vh;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.post {
+  margin-top: 4em;
+  width: 60vw;
+  text-align: justify;
+}
+
+.center-x {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center-y {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center-both {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.title {
+  animation-duration: 1s;
+  animation-name: fadeInUp;
+}
+
+.preview {
+  width: 40vw;
+  animation-duration: 1.2s;
+  animation-name: fadeInUpDelay;
+}
+
+/* #canvas {
+  width: 100vh;
+  height: 100vh;
+  position: absolute;
+  left: 20vw;
+  top: 10vh;
+  margin-left: -50vh;
+  z-index: -50;
+} */
+
+/* SKETCHY GOODNESS */
+/* .sketch-border {
+  position: relative;
+}
+
+.sketch-border>* {
+  position: relative;
+}
+
+.sketch-fill>* {
+  position: relative;
+}
+
+.sketch>* {
+  position: relative;
+}
+
+.circle {
+  border-radius: 50%;
+} */
+
+/* HAMBURGER */
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  overflow: visible; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #FFFFFF; }
+
+.hamburger-box {
+  width: 2.5em;
+  height: 2.5em;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 1.35em;
+  left: 0.45em;
+  margin: 0; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 1.25em;
+    height: 0.15em;
+    background-color: #FFFFFF;
+    border-radius: 0.15em;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -0.4em; }
+  .hamburger-inner::after {
+    bottom: -0.4em; }
+
+/*
+   * Squeeze
+   */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+  .hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+  .hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+/* MEDIA QUERIES */
+@media(max-width: 1224px) {
+
+}
+
+@media(max-width: 768px) {
+  
+}
+
+@media(max-width: 320px) {
+
+}
