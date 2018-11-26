@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Project One"
-intro:  Small project introduction goes here!
+intro:  Small project introduction goes here! Nothing too fancy.
 ---
 Some project text goes here...
 

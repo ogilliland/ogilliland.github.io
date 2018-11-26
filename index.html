@@ -1,10 +1,6 @@
 ---
 layout: default
 ---
-<div id="pagination">
-  <a onclick="upSection()"><div id="paginate-prev" class="sketch square"><span><</span></div></a>
-  <a onclick="downSection()"><div id="paginate-next" class="sketch square"><span>></span></div></a>
-</div>
 <div id="fullscreen">
   {% for page in site.pages %}
     {% if page.name == 'about.md' %}
@@ -16,16 +12,18 @@ layout: default
       </section>
     {% endif %}
   {% endfor %}
-  {% assign page = site.posts.first %}
+  {% assign page = site.projects.first %}
   <section>
     <div class="center-both">
+      <span class="intro">Work →</span>
       <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
       <p class="preview">{{ page.intro }}</p>
     </div>
   </section>
-  {% assign page = site.projects.first %}
+  {% assign page = site.posts.first %}
   <section>
     <div class="center-both">
+      <span class="intro">Blog →</span>
       <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
       <p class="preview">{{ page.intro }}</p>
     </div>

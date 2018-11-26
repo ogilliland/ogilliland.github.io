@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
 
+    <!-- external styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface:400|Playfair+Display:400i">
+
     <!-- custom styles -->
     <link rel="stylesheet" href="/css/styles.css">
 
@@ -14,8 +17,8 @@
   <body>
 
     <header>
-      <a href="/"><div id="main-logo" class="sketch square"><span>Oliver<br>Gilliland</span></div></a>
-      <div id="main-menu" class="sketch square">
+      <a href="/"><div id="main-logo"><span>ogilliland.</span></div></a>
+      <div id="main-menu">
         <button class="hamburger hamburger--squeeze" type="button">
           <span class="hamburger-box"><span class="hamburger-inner"></span></span>
         </button>
@@ -23,17 +26,20 @@
       <nav id="nav">
         <!-- TO DO -->
       </nav>
+      <div id="pagination" style="display: none;">
+        <a onclick="upSection()"><</a>
+        <span id="section-current">#</span>/<span id="section-total">#</span>
+        <a onclick="downSection()">></div></a>
+      </div>
     </header>
 
     <main>
-      <div id="container">
-        {{ content }}
-      </div>
+      {{ content }}
     </main>
 
     <!-- load scripts -->
     <script type="text/javascript">
-      var seq = ['/js/rough.min.js', '/js/scripts.js'];
+      var seq = ['/js/scripts.js'];
 
       function loadScript( url, callback ) {
 

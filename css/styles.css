@@ -13,33 +13,13 @@
 /* GLOBAL */
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   padding: 0;
   margin: 0;
-  color: #000000;
-  background-color: #EAE7DC;
-  overflow: hidden;
+  color: black;
+  background-color: white;
 }
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 400;
-  opacity: 0.05;
-  pointer-events: none;
-  background-image: url("/img/noise.png");
-}
-
-/* canvas {
-  transform-origin: 50%, 50%;
-  animation-duration: 2s;
-  animation-name: fadeAndScale;
-} */
 
 @keyframes fadeAndScale {
     from {
@@ -49,6 +29,15 @@ body::after {
     to {
         opacity: 1;
         transform: scale(1, 1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
@@ -80,20 +69,40 @@ body::after {
 
 h1, h2, h3 {
   margin: 0;
-  font-family: Lato, Helvetica, Arial, sans-serif;
   letter-spacing: 0.02em;
+}
+
+.outline>a, a>.outline {
+  color: white;
+  text-shadow:
+    1px 0 black,
+    -1px 0 black,
+    0 1px black,
+    0 -1px black;
+}
+
+.outline>a:hover, a:hover>.outline {
+  color: black;
 }
 
 h1 {
   font-size: 3em;
+  font-family: "Abril Fatface", Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 2.25em;
+  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 h3 {
   font-size: 1.5em;
+  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 a {
@@ -103,7 +112,7 @@ a {
 }
 
 a:hover {
-  color: #E85A4F;
+  color: inherit;
   transition: color 0.2s;
 }
 
@@ -111,67 +120,60 @@ a:hover {
   position: fixed;
   top: 2em;
   left: 2em;
-  width: 6em;
-  height: 6em;
-  background-color: #E85A4F;
-  z-index: 100;
+  width: 5em;
+  height: 2em;
+  line-height: 2em;
+  z-index: 200;
   text-align: center;
   user-select: none;
-}
-
-#main-logo>span {
-  position: relative;
-  top: 1em;
-  color: #FFFFFF;
-  font-size: 1.25em;
-  line-height: 1.25em;
-  font-weight: bold;
-  font-family: Mellony, sans-serif;
+  color: black;
+  transition: color 0.15s;
 }
 
 #main-menu {
   position: fixed;
   top: 2em;
   right: 2em;
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   z-index: 200;
-  color: #FFFFFF;
-  background-color: #E85A4F;
   text-align: center;
 }
 
 nav {
-  height: 100vh;
-  width: 0;
+  height: 0;
+  width: 100vw;
   position: fixed;
   z-index: 150;
-  top: 0;
-  right: 0;
-  background-color: #E85A4F;
-  transition: 0.5s;
+  left: 0;
+  bottom: 0;
+  color: white;
+  background-color: black;
+  transition: 0.4s;
 }
 
-#pagination>a>div {
+#pagination {
   position: fixed;
-  width: 3em;
-  height: 3em;
-  line-height: 3em;
-  color: #FFFFFF;
-  font-weight: bold;
-  background-color: #E85A4F;
+  right: -100vh;
+  top: 0;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+  width: 100vh;
+  height: 2em;
+  padding-top: 2em;
+  line-height: 2em;
   z-index: 100;
   text-align: center;
 }
 
-#paginate-prev {
-  bottom: 2em;
-  right: 7em;
+#section-current {
+  padding-left: 4em;
+  padding-right: 1em;
 }
 
-#paginate-next {
-  bottom: 2em;
-  right: 2em;
+#section-total {
+  padding-left: 1em;
+  padding-right: 4em;
 }
 
 /* FULL SCREEN */
@@ -189,12 +191,6 @@ nav {
 #fullscreen>section {
   width: 100vw;
   height: 100vh;
-}
-
-#container {
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
 }
 
 .post {
@@ -222,50 +218,37 @@ nav {
   display: inline-block;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-40%) translateY(-45%);
+}
+
+.intro {
+  width: 55vw;
+  animation-duration: 1s;
+  animation-name: fadeIn;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
 }
 
 .title {
+  width: 55vw;
+  margin-top: -0.25em;
   animation-duration: 1s;
   animation-name: fadeInUp;
+  font-size: 6em;
+  font-family: "Abril Fatface", Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
 
 .preview {
   width: 40vw;
   animation-duration: 1.2s;
   animation-name: fadeInUpDelay;
+  font-size: 2.25em;
+  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
-
-/* #canvas {
-  width: 100vh;
-  height: 100vh;
-  position: absolute;
-  left: 20vw;
-  top: 10vh;
-  margin-left: -50vh;
-  z-index: -50;
-} */
-
-/* SKETCHY GOODNESS */
-/* .sketch-border {
-  position: relative;
-}
-
-.sketch-border>* {
-  position: relative;
-}
-
-.sketch-fill>* {
-  position: relative;
-}
-
-.sketch>* {
-  position: relative;
-}
-
-.circle {
-  border-radius: 50%;
-} */
 
 /* HAMBURGER */
 /*!
@@ -292,23 +275,23 @@ nav {
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background-color: #FFFFFF; }
+    background-color: white; }
 
 .hamburger-box {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2em;
+  height: 2em;
   display: inline-block;
   position: relative; }
 
 .hamburger-inner {
   display: block;
-  top: 1.35em;
-  left: 0.45em;
+  top: 0.95em;
+  left: 0.15em;
   margin: 0; }
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    width: 1.25em;
-    height: 0.15em;
-    background-color: #FFFFFF;
+    width: 1em;
+    height: 0.1em;
+    background-color: black;
     border-radius: 0.15em;
     position: absolute;
     transition-property: transform;
@@ -318,9 +301,9 @@ nav {
     content: "";
     display: block; }
   .hamburger-inner::before {
-    top: -0.4em; }
+    top: -0.3em; }
   .hamburger-inner::after {
-    bottom: -0.4em; }
+    bottom: -0.3em; }
 
 /*
    * Squeeze
