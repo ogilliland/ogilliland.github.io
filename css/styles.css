@@ -1,15 +1,3 @@
-@font-face {
-  font-family: Mellony;
-  font-display: block;
-  src: url('/font/mellony.ttf');
-}
-
-@font-face {
-  font-family: Lato;
-  font-display: block;
-  src: url('/font/lato.ttf');
-}
-
 ::selection {
   background: rgba(0, 0, 0, 0.996);
   color: white;

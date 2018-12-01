@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post center-h">
-	<h1 class="title-md fade-up delay-sm">{{ page.title }}</h1>
+	<h1 class="title-md fade-up delay-sm">{% include title.html page=page %}</h1>
 	{% if page.collection == "posts" %}
 		<span class="date fade-up delay-sm">
 			{{ page.date | date: "%d %b %y" }} &nbsp; • &nbsp; {% include words.html content=content %}

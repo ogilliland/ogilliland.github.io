@@ -4,18 +4,32 @@ description: >- # this means to ignore newlines until "baseurl:"
   Awesome site description goes here. It will appear in document head meta (for
   Google search results) and in feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ogilliland.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ollymg
-github_username:  ogilliland
+github_username: ogilliland
+
+twitter:
+  username: ollymg
+  card: summary
+
+social:
+  name: Oliver Gilliland
+  links:
+    - https://www.linkedin.com/in/oliver-gilliland/
+    - https://github.com/ogilliland
+    - https://twitter.com/ollymg
+
+google_site_verification: 42tKFqrTn6wwvk4QxzMplSps47pxtLB1GFX_Dm2Upu0
 
 # Build settings
-markdown:      kramdown
-highlighter:   rouge
-permalink:     /blog/:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
 
 plugins:
   - jekyll-feed
   - jekyll-archives
+  - jekyll-seo-tag
 
 collections:
   projects:
