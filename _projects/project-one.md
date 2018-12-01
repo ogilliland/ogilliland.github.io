@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Project One"
-intro:  Small project introduction goes here! Nothing too fancy.
+title: "Project One"
+date: 2018-11-24
+intro: "Small project introduction goes here! Nothing too fancy."
 ---
 Some project text goes here...
 

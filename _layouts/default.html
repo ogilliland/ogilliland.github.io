@@ -17,7 +17,7 @@
   <body>
 
     <header>
-      <a href="/"><div id="main-logo"><span>ogilliland.</span></div></a>
+      <div id="main-logo"><span><a href="/">ogilliland.</a></span></div>
       <div id="main-menu">
         <button class="hamburger hamburger--squeeze" type="button">
           <span class="hamburger-box"><span class="hamburger-inner"></span></span>
@@ -27,11 +27,16 @@
         <!-- TO DO -->
       </nav>
       <div id="pagination" style="display: none;">
-        <a onclick="upSection()"><</a>
+        <a onclick="upSection()" style="cursor: pointer; cursor: hand;">❮</a>
         <span id="section-current">#</span>/<span id="section-total">#</span>
-        <a onclick="downSection()">></div></a>
+        <a onclick="downSection()" style="cursor: pointer; cursor: hand;">❯</div></a>
       </div>
     </header>
+
+    <div id="cover"></div>
+    <form method="post" id="transition">
+    <input type="hidden" name="animate" value="true">
+    </form>
 
     <main>
       {{ content }}
@@ -69,6 +74,8 @@
           loadScript(seq[i], function() {
             if(i+1 < seq.length) {
               iter(i+1);
+            } else {
+              init();
             }
           });
         }

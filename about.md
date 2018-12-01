@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "About Me"
-intro:  Designer, hacker, artist.
+title:  "I'm Oliver"
+intro:  "Designer, hacker, artist, mad scientist."
 ---
 More information about me goes here...

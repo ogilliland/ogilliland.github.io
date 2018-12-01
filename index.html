@@ -5,27 +5,27 @@ layout: default
   {% for page in site.pages %}
     {% if page.name == 'about.md' %}
       <section>
-        <div class="center-both">
-          <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-          <p class="preview">{{ page.intro }}</p>
+        <div class="card center-both">
+          <a class="title-lg fade-up delay-sm" href="{{ page.url }}">{{ page.title }}</a>
+          <span class="intro-lg fade-up delay-md">{{ page.intro }}</span>
         </div>
       </section>
     {% endif %}
   {% endfor %}
-  {% assign page = site.projects.first %}
+  {% assign page = site.projects.last %}
   <section>
-    <div class="center-both">
-      <span class="intro">Work →</span>
-      <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-      <p class="preview">{{ page.intro }}</p>
+    <div class="card center-both">
+      <span class="breadcrumb fade-in delay-sm">work → latest</span>
+      <a class="title-lg fade-up delay-sm" href="{{ page.url }}">{{ page.title }}</a>
+      <span class="intro-lg fade-up delay-md">{{ page.intro }}</span>
     </div>
   </section>
-  {% assign page = site.posts.first %}
+  {% assign page = site.posts.last %}
   <section>
-    <div class="center-both">
-      <span class="intro">Blog →</span>
-      <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-      <p class="preview">{{ page.intro }}</p>
+    <div class="card center-both">
+      <span class="breadcrumb fade-in delay-sm">blog → latest</span>
+      <a class="title-lg fade-up delay-sm" href="{{ page.url }}">{{ page.title }}</a>
+      <span class="intro-lg fade-up delay-md">{{ page.intro }}</span>
     </div>
   </section>
 </div>
