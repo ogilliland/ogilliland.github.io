@@ -16,11 +16,13 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
   xhr.onreadystatechange = function() {
     if (xhr.readyState > 3) {
       if (xhr.status == 200 || xhr.status == 404) {
+        // update page
         document.title = xhr.responseText.match(/<title>(.*)<\/title>/is)[1];
         if (history) {
           window.history.pushState({}, '', url);
         }
-        tryload(url, xhr.responseText, history); // TO DO - make this more efficient by firing on completion
+        // TO DO - make this more efficient by firing on completion
+        tryload(url, xhr.responseText, history);
       } else {
         window.location.href = url;
       }
@@ -152,6 +154,7 @@ window.onresize = function() {
 }
 
 function reset() {
+  fullscreen = false;
   document.body.style.overflow = null;
   sections = null;
   scroll = null;

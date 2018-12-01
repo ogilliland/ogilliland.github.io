@@ -7,7 +7,7 @@ layout: default
       <section>
         <div class="card center-both">
           <a class="title-lg fade-up delay-sm" href="{{ page.url }}">{{ page.title }}</a>
-          <span class="intro-lg fade-up delay-md">{{ page.intro }}</span>
+          <span class="intro-lg fade-up delay-md">{{ page.intro | truncate: 120 }} <a class="underline" href="{{ page.url }}">About me.</a></span>
         </div>
       </section>
     {% endif %}
@@ -15,17 +15,17 @@ layout: default
   {% assign page = site.projects.last %}
   <section>
     <div class="card center-both">
-      <span class="breadcrumb fade-in delay-sm">work → latest</span>
+      <span class="breadcrumb fade-in delay-sm"><a href="/work/">work</a> → <a href="{{ page.url }}">latest</a></span>
       <a class="title-lg fade-up delay-sm" href="{{ page.url }}">{{ page.title }}</a>
-      <span class="intro-lg fade-up delay-md">{{ page.intro }}</span>
+      <span class="intro-lg fade-up delay-md">{{ page.intro | truncate: 120 }} <a class="underline" href="{{ page.url }}">Read more.</a></span>
     </div>
   </section>
   {% assign page = site.posts.last %}
   <section>
     <div class="card center-both">
-      <span class="breadcrumb fade-in delay-sm">blog → latest</span>
+      <span class="breadcrumb fade-in delay-sm"><a href="/blog/">blog</a> → <a href="{{ page.url }}">latest</a></span>
       <a class="title-lg fade-up delay-sm" href="{{ page.url }}">{{ page.title }}</a>
-      <span class="intro-lg fade-up delay-md">{{ page.intro }}</span>
+      <span class="intro-lg fade-up delay-md">{{ page.intro | truncate: 120 }} <a class="underline" href="{{ page.url }}">Read more.</a></span>
     </div>
   </section>
 </div>

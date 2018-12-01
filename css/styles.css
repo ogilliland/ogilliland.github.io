@@ -37,10 +37,11 @@ body {
   padding: 0;
   margin: 0;
   color: black;
-  background-color: white;
+  background-color: black;
 }
 
 main {
+  color: black;
   background-color: white;
 }
 
@@ -234,11 +235,40 @@ nav {
 }
 
 .card {
-  width: 45vw;
+  width: 50vw;
 }
 
-.underline {
+/* .underline {
   border-bottom: 0.05em solid currentColor;
+} */
+
+.underline {
+  color: black;
+  position: relative;
+  transition: 0.4s;
+  white-space: nowrap;
+  padding-top: 0.175em;
+  /* padding-left: 0.125em; */
+}
+
+.underline::after {
+  z-index: -50;
+  position: absolute;
+  content: '';
+  height: 0.05em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  transition: 0.4s;
+}
+
+.underline:hover {
+  color: white;
+}
+
+.underline:hover::after {
+  height: 100%;
 }
 
 #prev-next {
@@ -290,7 +320,6 @@ nav {
   display: block;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
-  margin-bottom: -1em;
 }
 
 .date {
@@ -380,8 +409,7 @@ nav {
 
 hr {
   border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  border-bottom: 0.05em solid currentColor;
   margin-top: 1.25em;
   margin-bottom: 1.5em;
 }

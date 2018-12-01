@@ -5,10 +5,7 @@ layout: default
 	<h1 class="title-md fade-up delay-sm">{{ page.title }}</h1>
 	{% if page.collection == "posts" %}
 		<span class="date fade-up delay-sm">
-			{{ page.date | date: "%d %b %y" }}
-			{% if page.read_time %}
-				&nbsp; • &nbsp; {{ page.read_time }} min read
-			{% endif %}
+			{{ page.date | date: "%d %b %y" }} &nbsp; • &nbsp; {% include words.html content=content %}
 		</span>
 	{% endif %}
   <span class="intro-md fade-up delay-md">{{ page.intro }}</span>
