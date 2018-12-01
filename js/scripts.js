@@ -21,6 +21,9 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
         if (history) {
           window.history.pushState({}, '', url);
         }
+        // update Google Analytics
+        ga('set', 'page', url.replace(window.location.protocol+'//'+window.location.hostname+(window.location.port ? ':'+window.location.port : ''), ''));
+        ga('send', 'pageview');
         // TO DO - make this more efficient by firing on completion
         tryload(url, xhr.responseText, history);
       } else {
