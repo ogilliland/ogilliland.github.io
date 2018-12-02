@@ -1,15 +1,15 @@
 ---
 layout: default
 ---
-<div class="post center-h">
-	<h1 class="title-md fade-up delay-sm">{% include title.html page=page %}</h1>
-	{% if page.collection == "posts" %}
-		<span class="date fade-up delay-sm">
-			{{ page.date | date: "%d %b %y" }} &nbsp; • &nbsp; {% include words.html content=content %}
+<div class="post">
+	<h1 class="title fade-up delay-sm">{% include title.html page = page %}</h1>
+  <span class="intro fade-up delay-md">{{ page.intro }}</span>
+  {% if page.collection == "posts" %}
+		<span class="date fade-up delay-md">
+			{{ page.date | date: "%d %b %y" }} &nbsp; • &nbsp; {% include words.html content = content %}
 		</span>
 	{% endif %}
-  <span class="intro-md fade-up delay-md">{{ page.intro }}</span>
   <hr class="fade-up delay-md">
 	<div class="fade-up delay-lg">{{ content }}</div>
 </div>
-{% include prevnext.html %}
+{% include prevnext.html page = page %}

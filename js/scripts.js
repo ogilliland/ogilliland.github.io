@@ -22,10 +22,10 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
           window.history.pushState({}, '', url);
         }
         // update Google Analytics
-        ga('set', 'page', url.replace(window.location.protocol+'//'+window.location.hostname+(window.location.port ? ':'+window.location.port : ''), ''));
+        ga('set', 'page', url.replace(/^(?:\/\/|[^\/]+)*/, ''));
         ga('send', 'pageview');
         // TO DO - make this more efficient by firing on completion
-        tryload(url, xhr.responseText, history);
+        tryload(xhr.responseText);
       } else {
         window.location.href = url;
       }
@@ -36,15 +36,15 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
   return xhr;
 }
 
-function tryload(url, data, history) {
+function tryload(data) {
   if (!animating) {
-    load(url, data, history);
+    load(data);
   } else {
-    setTimeout(function() { tryload(url, data, history) }, 100);
+    setTimeout(function() { tryload(data) }, 100);
   }
 }
 
-function load(url, data) {
+function load(data) {
   document.getElementsByTagName('main')[0].innerHTML = data.match(/<main>(.*)<\/main>/is)[1];
   window.scrollTo(0, 0);
   // reset animation
@@ -72,9 +72,8 @@ document.getElementById('cover').addEventListener('transitionend', function(even
 });
 
 window.onpopstate = function(event) {
-  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
   event.preventDefault();
-  preload(document.location, false);
+  preload(String(document.location), false);
 };
 
 function downSection() {
@@ -173,7 +172,7 @@ function init() {
         event.preventDefault();
         var anchor = closest(event.target, 'a');
         if (anchor != -1) {
-          preload(anchor.href, true);
+          preload(String(anchor.href), true);
         }
       };
     }

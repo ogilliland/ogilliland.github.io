@@ -1,3 +1,10 @@
+---
+---
+
+$primary-font: "Abril Fatface", Helvetica, Arial, sans-serif;
+$secondary-font: "Playfair Display", Helvetica, Arial, sans-serif;
+$tertiary-font: Helvetica, Arial, sans-serif;
+
 ::selection {
   background: rgba(0, 0, 0, 0.996);
   color: white;
@@ -19,7 +26,7 @@ html {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $tertiary-font;
   font-size: 16px;
   line-height: 1.5;
   padding: 0;
@@ -59,11 +66,11 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-family: "Abril Fatface", Helvetica, Arial, sans-serif;
+  font-family: $primary-font;
   font-weight: 400;
 }
 
-.outline>a,
+/* .outline>a,
 a>.outline {
   color: white;
   text-shadow:
@@ -76,7 +83,7 @@ a>.outline {
 .outline>a:hover,
 a:hover>.outline {
   color: black;
-}
+} */
 
 h1 {
   font-size: 3em;
@@ -94,16 +101,6 @@ a {
   color: inherit;
   text-decoration: none;
   transition: color 0.5s;
-  /* text-shadow:
-    -2px -2px white,
-    -2px 2px white,
-    2px -2px white,
-    2px 2px white;
-  background-size: 1px 1em;
-  box-shadow:
-    inset 0 -0.175em white,
-    inset 0 -0.2em;
-  display: inline; */
 }
 
 a:hover {
@@ -158,78 +155,6 @@ nav {
   transition: 0.4s;
 }
 
-#pagination {
-  position: fixed;
-  right: -100vh;
-  top: 0;
-  transform-origin: 0 0;
-  transform: rotate(90deg);
-  width: 100vh;
-  height: 2em;
-  padding-top: 2em;
-  line-height: 2em;
-  z-index: 100;
-  text-align: center;
-  overflow: hidden;
-  user-select: none;
-}
-
-#section-current {
-  padding-left: 4em;
-  padding-right: 1em;
-}
-
-#section-total {
-  padding-left: 1em;
-  padding-right: 4em;
-}
-
-/* FULL SCREEN */
-#fullscreen {
-  background-color: white;
-  position: absolute;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  min-width: 100vw;
-  min-height: 100vh;
-}
-
-#fullscreen>section {
-  width: 100vw;
-  height: 100vh;
-}
-
-.post {
-  margin: 8em 0 4em 0;
-  width: 60vw;
-  text-align: justify;
-}
-
-.post>.title-lg,
-.post>.title-md,
-.post>.title-sm {
-  text-align: center;
-}
-
-.post>.intro-lg,
-.post>.intro-md,
-.post>.intro-sm {
-  text-align: center;
-}
-
-.post>.date {
-  text-align: center;
-}
-
-.card {
-  width: 50vw;
-}
-
-/* .underline {
-  border-bottom: 0.05em solid currentColor;
-} */
-
 .underline {
   color: black;
   position: relative;
@@ -259,9 +184,67 @@ nav {
   height: 100%;
 }
 
+/* FULLSCREEN */
+#fullscreen {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#fullscreen>section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  width: 50vw;
+}
+
+#pagination {
+  position: fixed;
+  right: -100vh;
+  top: 0;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+  width: 100vh;
+  height: 2em;
+  padding-top: 2em;
+  line-height: 2em;
+  z-index: 100;
+  text-align: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+#section-current {
+  padding-left: 4em;
+  padding-right: 1em;
+}
+
+#section-total {
+  padding-left: 1em;
+  padding-right: 4em;
+}
+
+/* INDIVIDUAL POST */
+.post {
+  margin: auto;
+  padding-top: 8em;
+  padding-bottom: 4em;
+  width: 60vw;
+  text-align: center;
+}
+
+.post p {
+  text-align: justify;
+}
+
 #prev-next {
   width: 100vw;
-  /* height: 17em; */
   color: white;
   background-color: black;
 }
@@ -269,31 +252,25 @@ nav {
 #link-prev {
   float: left;
   text-align: left;
-  height: 9em;
-  padding: 4em 3em 3em 3em;
-  max-width: 40vw;
+  min-height: 9em;
+  padding: 4em 0 4em 3em;
+  width: 34vw;
+}
+
+#link-dir {
+  float: left;
+  text-align: center;
+  min-height: 9em;
+  padding: 4em 3em 4em 3em;
+  width: 18vw;
 }
 
 #link-next {
   float: right;
   text-align: right;
-  height: 9em;
-  padding: 4em 3em 3em 3em;
-  max-width: 40vw;
-}
-
-.center-h {
-  position: relative;
-  display: inline-block;
-  left: 50vw;
-  transform: translateX(-50%);
-}
-
-.center-v {
-  position: relative;
-  display: inline-block;
-  top: 50vh;
-  transform: translateY(-50%);
+  min-height: 9em;
+  padding: 4em 3em 4em 0;
+  width: 34vw;
 }
 
 .center-both {
@@ -306,66 +283,52 @@ nav {
 
 .breadcrumb {
   display: block;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $tertiary-font;
   font-weight: 400;
 }
 
 .date {
   display: block;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $tertiary-font;
   font-weight: 400;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-bottom: 1.5em;
 }
 
-.title-lg {
-  display: block;
-  font-size: 6em;
-  font-family: "Abril Fatface", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.25em;
-}
-
-.intro-lg {
-  display: block;
-  font-size: 2.25em;
-  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  margin-top: 0.5em;
-}
-
-.title-md {
+.title {
   display: block;
   font-size: 4.5em;
-  font-family: "Abril Fatface", Helvetica, Arial, sans-serif;
+  font-family: $primary-font;
   font-weight: 400;
   line-height: 1.25em;
 }
 
-.intro-md {
+.intro {
   display: block;
   font-size: 2em;
-  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+  font-family: $secondary-font;
   font-weight: 400;
   font-style: italic;
   margin-top: 0.5em;
 }
 
-.title-sm {
-  display: block;
-  font-size: 3em;
-  font-family: "Abril Fatface", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+.title.large {
+  font-size: 6em;
   line-height: 1.25em;
 }
 
-.intro-sm {
-  display: block;
+.intro.large {
+  font-size: 2.25em;
+  margin-top: 0.5em;
+}
+
+.title.small {
+  font-size: 3em;
+  line-height: 1.25em;
+}
+
+.intro.small {
   font-size: 1.25em;
-  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: italic;
   margin-top: 0.5em;
 }
 
@@ -402,14 +365,34 @@ hr {
   margin-bottom: 1.5em;
 }
 
-/* HAMBURGER */
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
+/* PULL QUOTES */
+.pullquote-left,
+.pullquote-right {
+  font-style: normal;
+}
+
+.pullquote-right::before,
+.pullquote-left::before {
+  display: block;
+  position: relative;
+  padding: 0;
+  border: none;
+  text-align: left;
+  font-family: $secondary-font;
+  font-style: italic;
+  content: '“ ' attr(data-pullquote) ' ”';
+  float: right;
+  width: 45%;
+  margin: 1em -10% 1em 2.5em;
+  font-size: 1.5em;
+}
+
+.pullquote-left::before {
+  float: left;
+  margin: 1em 2.5em 1em -10%;
+}
+
+/* HAMBURGERS */
 .hamburger {
   display: inline-block;
   cursor: pointer;
@@ -461,7 +444,7 @@ hr {
 
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: "";
+  content: '';
   display: block;
 }
 
@@ -473,9 +456,7 @@ hr {
   bottom: -0.3em;
 }
 
-/*
-   * Squeeze
-   */
+/* HAMBURGERS - SQUEEZE */
 .hamburger--squeeze .hamburger-inner {
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);

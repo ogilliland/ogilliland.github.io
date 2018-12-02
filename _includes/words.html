@@ -1,2 +1,1 @@
-{% assign words = include.content | strip_html | number_of_words %}
-{{ words | divided_by: 250 | plus: 1 }} min read
+{% assign words = include.content | strip_html | number_of_words %}{{ words | divided_by: 250 | plus: 1 }} min read

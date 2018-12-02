@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Some Writing to Fill Space"
-date: 2018-11-25
+title: "Some More Writing Here"
+date: 2018-11-26
 last_modified_at: 2018-12-01
 intro: "Short intro that should help explain what the post is about."
 ---

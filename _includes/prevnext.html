@@ -1,5 +1,11 @@
 {% if page.collection %}
-  {% assign posts = site[page.collection] | where:"layout", "post" | sort: 'date' %}
+  {% assign posts = site[page.collection] | where: "layout", "post" | sort: "date" %}
+
+  {% if page.collection == "projects" %}
+    {% assign dir = "/work/" %}
+  {% elsif page.collection == "posts" %}
+    {% assign dir = "/blog/" %}
+  {% endif %}
 
   {% for post in posts %}
     {% if post.title == page.title %}
@@ -15,8 +21,9 @@
 
   {% if posts.size > 1 %}
   <div id="prev-next">
-    {% if prev %}<div id="link-prev"><a href="{{prev.url}}"><span class="intro-md">Prev.</span><span class="title-sm">{{ prev.title }}</span></a></div>{% endif %}
-    {% if next %}<div id="link-next"><a href="{{next.url}}"><span class="intro-md">Next</span><span class="title-sm">{{ next.title }}</span></a></div>{% endif %}
+    <div id="link-prev">{% if prev %}<a href="{{ prev.url }}"><span class="intro">Prev.</span><span class="title small">{{ prev.title }}</span></a>{% endif %}</div>
+    <div id="link-dir">{% if dir %}<!-- <a href="{{ dir }}"><span class="intro-md">View All</span></a> -->{% endif %}</div>
+    <div id="link-next">{% if next %}<a href="{{ next.url }}"><span class="intro">Next</span><span class="title small">{{ next.title }}</span></a>{% endif %}</div>
   </div>
   {% endif %}
 {% endif %}

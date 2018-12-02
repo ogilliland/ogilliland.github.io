@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Some Writing to Fill Space"
-date: 2018-11-25
+title: "Number Three"
+date: 2018-11-26
 last_modified_at: 2018-12-01
-intro: "Short intro that should help explain what the post is about."
+intro: "Small project introduction goes here; nothing too fancy. This one is intentionally long to see what happens when the number of characters exceeds what is expected."
 ---
-Dolor sit amet, consectetur adipiscing elit. Integer lacus enim, laoreet sit amet vulputate at, ullamcorper eu justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. In ex velit, venenatis sed suscipit ut, faucibus sit amet libero. Vestibulum pharetra ex velit, ac consectetur urna egestas quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed nunc dignissim, tincidunt orci in, vulputate sem. Ut tellus felis, mattis sed justo tincidunt, dictum ornare purus. Suspendisse dignissim lacus at nibh euismod, in ultrices mi tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam sed lobortis massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Vivamus porta efficitur lorem et pellentesque. Aliquam fringilla pellentesque est. Donec vulputate lacus a ipsum scelerisque, at fringilla justo consequat. Donec laoreet libero nec sodales porta.
+Some project text goes here...
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus enim, laoreet sit amet vulputate at, ullamcorper eu justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. In ex velit, venenatis sed suscipit ut, faucibus sit amet libero. Vestibulum pharetra ex velit, ac consectetur urna egestas quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed nunc dignissim, tincidunt orci in, vulputate sem. Ut tellus felis, mattis sed justo tincidunt, dictum ornare purus. Suspendisse dignissim lacus at nibh euismod, in ultrices mi tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam sed lobortis massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Vivamus porta efficitur lorem et pellentesque. Aliquam fringilla pellentesque est. Donec vulputate lacus a ipsum scelerisque, at fringilla justo consequat. Donec laoreet libero nec sodales porta.
 
 Integer lacinia consequat accumsan. Praesent nisi arcu, tempus vel imperdiet nec, ultricies et augue. In hac habitasse platea dictumst. Phasellus sem erat, ultricies eu nunc a, congue pulvinar mi. Maecenas elementum consequat posuere. Morbi vitae felis nisi. Nulla sed mauris pellentesque, auctor est ac, laoreet velit. Vivamus porta, urna at suscipit pulvinar, urna nisl placerat ligula, non placerat diam tellus vitae justo. Cras a rutrum ante, vitae euismod nisi. Phasellus eros risus, placerat in lacus eu, convallis elementum lectus. Nunc risus felis, sodales vel rhoncus vel, suscipit eget ipsum. Sed nec dapibus augue.
 
