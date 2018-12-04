@@ -28,6 +28,7 @@ permalink: /blog/:year/:month/:title/
 
 sass:
   style: compressed
+  sass_dir: _sass
 
 plugins:
   - jekyll-feed

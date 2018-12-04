@@ -1,5 +1,19 @@
 ---
 ---
+@import "responsive.scss"; // https://gist.github.com/maxluster/168e650267bac9faaafd
+
+$named-breakpoints: (
+  "320": 320px,
+  "480": 480px,
+  "iphone5": 568px,
+  "android": 640px,
+  "ipad": (min-device-width 768px) (max-device-width 1024px),
+  "tablet": 800px,
+  "big1": 1400px,
+  "big2": 1600px,
+  "big3": 1800px,
+  "big4": 2000px
+);
 
 $primary-font: "Abril Fatface", Helvetica, Arial, sans-serif;
 $secondary-font: "Playfair Display", Helvetica, Arial, sans-serif;
@@ -27,12 +41,25 @@ html {
 
 body {
   font-family: $tertiary-font;
-  font-size: 16px;
   line-height: 1.5;
   padding: 0;
   margin: 0;
   color: black;
   background-color: black;
+  @include responsive("font-size", 8px, (   
+      "320": 8px,
+      "480": 9px,
+      "iphone5": 10px,
+      "android": 10px,
+      "ipad": 14px,
+      "tablet": 14px,
+      "big1": 16px,
+      "big2": 17px,
+      "big3": 18px,
+      "big4": 19px
+    )
+  );
+  min-width: 320px;
 }
 
 main {
@@ -120,6 +147,12 @@ a:hover {
   user-select: none;
   color: black;
   transition: color 0.15s;
+  /* prevent tiny fonts */
+  @include responsive("font-size", 10px, (   
+      "iphone5": 1em,
+      "android": 1em
+    )
+  );
 }
 
 #main-menu {
@@ -130,6 +163,12 @@ a:hover {
   height: 2em;
   z-index: 200;
   text-align: center;
+  /* prevent tiny fonts */
+  @include responsive("font-size", 10px, (   
+      "iphone5": 1em,
+      "android": 1em
+    )
+  );
 }
 
 nav {
@@ -235,7 +274,16 @@ nav {
   margin: auto;
   padding-top: 8em;
   padding-bottom: 4em;
-  width: 60vw;
+  @include responsive("width", 85vw, (   
+      "320": 85vw,
+      "480": 80vw,
+      "iphone5": 75vw,
+      "android": 75vw,
+      "ipad": 70vw,
+      "tablet": 70vw,
+      "big1": 60vw
+    )
+  );
   text-align: center;
 }
 
@@ -254,23 +302,23 @@ nav {
   text-align: left;
   min-height: 9em;
   padding: 4em 0 4em 3em;
-  width: 34vw;
+  width: 44vw;
 }
 
-#link-dir {
+/* #link-dir {
   float: left;
   text-align: center;
   min-height: 9em;
   padding: 4em 3em 4em 3em;
   width: 18vw;
-}
+} */
 
 #link-next {
   float: right;
   text-align: right;
   min-height: 9em;
   padding: 4em 3em 4em 0;
-  width: 34vw;
+  width: 44vw;
 }
 
 .center-both {
@@ -360,7 +408,7 @@ nav {
 
 hr {
   border: 0;
-  border-bottom: 0.05em solid currentColor;
+  border-bottom: 0.1em solid currentColor;
   margin-top: 1.25em;
   margin-bottom: 1.5em;
 }
@@ -380,16 +428,37 @@ hr {
   text-align: left;
   font-family: $secondary-font;
   font-style: italic;
-  content: '“ ' attr(data-pullquote) ' ”';
+  /* content: "\201C\00A0" attr(data-pullquote) "\00A0\201D"; */
+  content: attr(data-pullquote);
   float: right;
-  width: 45%;
-  margin: 1em -10% 1em 2.5em;
+  width: 40%;
+  margin: 1em -5% 1em 1.25em;
+  @include responsive("margin-right", -5%, (   
+      "320": -5%,
+      "480": -5%,
+      "iphone5": -5%,
+      "android": -5%,
+      "ipad": -7.5%,
+      "tablet": -7.5%,
+      "big1": -10%
+    )
+  );
   font-size: 1.5em;
 }
 
 .pullquote-left::before {
   float: left;
-  margin: 1em 2.5em 1em -10%;
+  margin: 1em 1.25em 1em -5%;
+  @include responsive("margin-left", -5%, (   
+      "320": -5%,
+      "480": -5%,
+      "iphone5": -5%,
+      "android": -5%,
+      "ipad": -7.5%,
+      "tablet": -7.5%,
+      "big1": -10%
+    )
+  );
 }
 
 /* HAMBURGERS */
@@ -487,10 +556,3 @@ hr {
   transform: rotate(-90deg);
   transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-
-/* MEDIA QUERIES */
-@media(max-width: 1224px) {}
-
-@media(max-width: 768px) {}
-
-@media(max-width: 320px) {}

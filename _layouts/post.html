@@ -6,7 +6,7 @@ layout: default
   <span class="intro fade-up delay-md">{{ page.intro }}</span>
   {% if page.collection == "posts" %}
 		<span class="date fade-up delay-md">
-			{{ page.date | date: "%d %b %y" }} &nbsp; • &nbsp; {% include words.html content = content %}
+			{{ page.date | date: "%d %b %y" }}<span style="padding-left:0.5em; padding-right:0.5em;"> • </span>{% include words.html content = content %}
 		</span>
 	{% endif %}
   <hr class="fade-up delay-md">
