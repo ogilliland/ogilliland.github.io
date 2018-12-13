@@ -4,7 +4,7 @@ title: "Even More Writing Here"
 date: 2018-11-27
 last_modified_at: 2018-12-01
 intro: "Short intro that should help explain what the post is about."
-img: "https://picsum.photos/800/600/?random"
+image: "https://picsum.photos/800/600/?random"
 ---
 Dolor sit amet, consectetur adipiscing elit. Integer lacus enim, laoreet sit amet vulputate at, ullamcorper eu justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. In ex velit, venenatis sed suscipit ut, faucibus sit amet libero. Vestibulum pharetra ex velit, ac consectetur urna egestas quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sed nunc dignissim, tincidunt orci in, vulputate sem. Ut tellus felis, mattis sed justo tincidunt, dictum ornare purus. Suspendisse dignissim lacus at nibh euismod, in ultrices mi tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam sed lobortis massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Vivamus porta efficitur lorem et pellentesque. Aliquam fringilla pellentesque est. Donec vulputate lacus a ipsum scelerisque, at fringilla justo consequat. Donec laoreet libero nec sodales porta.
 
