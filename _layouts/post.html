@@ -3,12 +3,15 @@ layout: default
 ---
 <div class="post">
 	<h1 class="title fade-up delay-sm">{% include title.html page = page %}</h1>
-  <span class="intro fade-up delay-md">{{ page.intro }}</span>
-  {% if page.collection == "posts" %}
-		<span class="date fade-up delay-md">
+	{% if page.collection == "posts" %}
+		<span class="date fade-up delay-sm">
 			{{ page.date | date: "%d %b %y" }}<span style="padding-left:0.5em; padding-right:0.5em;"> • </span>{% include words.html content = content %}
 		</span>
 	{% endif %}
+	{% if page.img %}
+		<img class="image-full fade-up delay-md" src="{{ page.img }}">
+	{% endif %}
+  <span class="intro fade-up delay-md">{{ page.intro }}</span>
   <hr class="fade-up delay-md">
 	<div class="fade-up delay-lg">{{ content }}</div>
 </div>

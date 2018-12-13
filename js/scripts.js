@@ -6,8 +6,10 @@ if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
+/* AJAX PAGE TRANSITIONS */
 function preload(url, history) { // TO DO - cancel preload if user navigates back again before completion
   animating = true;
+  // expand cover
   document.getElementById('cover').style.top = null;
   document.getElementById('cover').style.height = '100vh';
   // document.getElementById('cover').classList.add('cover-animating');
@@ -39,6 +41,11 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
 function tryload(data) {
   if (!animating) {
     load(data);
+    // TO DO - close menu when navigating using menu
+    /* document.getElementById('nav').style.transitionDuration = '0';
+    document.getElementById('nav').style.height = '0';
+    document.getElementById('main-logo').style.color = null;
+    document.getElementById('nav').style.transitionDuration = null; */
   } else {
     setTimeout(function() { tryload(data) }, 100);
   }
@@ -76,6 +83,7 @@ window.onpopstate = function(event) {
   preload(String(document.location), false);
 };
 
+/* FULL PAGE SCROLL HIJACK */
 function downSection() {
   if (fullscreen) {
     if (scroll.activeSection >= scroll.sectionCount) {
@@ -163,6 +171,7 @@ function reset() {
   document.getElementById('pagination').style.display = 'none';
 }
 
+/* FUNCTION RUNS EVERY TIME A NEW PAGE IS LOADED */
 function init() {
   /* ANIMATED PAGE TRANSITIONS */
   var links = document.getElementsByTagName('a');
@@ -215,8 +224,15 @@ hamburger.addEventListener("click", function() {
   if (document.getElementById('nav').style.height !== '100vh') {
     document.getElementById('nav').style.height = '100vh';
     document.getElementById('main-logo').style.color = 'white';
+    document.getElementById('nav-links').style.display = null;
   } else {
     document.getElementById('nav').style.height = '0';
     document.getElementById('main-logo').style.color = null;
+  }
+});
+
+document.getElementById('nav').addEventListener('transitionend', function(event) {
+  if (document.getElementById('nav').style.height !== '100vh') {
+    document.getElementById('nav-links').style.display = 'none';
   }
 });
