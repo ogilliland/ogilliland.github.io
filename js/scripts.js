@@ -174,16 +174,18 @@ function reset() {
 /* FUNCTION RUNS EVERY TIME A NEW PAGE IS LOADED */
 function init() {
   /* ANIMATED PAGE TRANSITIONS */
-  var links = document.getElementsByTagName('a');
-  for (var a = 0; a < links.length; a++) {
-    if (links[a].host == window.location.host && links[a].href !== '') {
-      links[a].onclick = function(event) {
-        event.preventDefault();
-        var anchor = closest(event.target, 'a');
-        if (anchor != -1) {
-          preload(String(anchor.href), true);
-        }
-      };
+  if(!!(window.history && history.pushState)) {
+    var links = document.getElementsByTagName('a');
+    for (var a = 0; a < links.length; a++) {
+      if (links[a].host == window.location.host && links[a].href !== '') {
+        links[a].onclick = function(event) {
+          event.preventDefault();
+          var anchor = closest(event.target, 'a');
+          if (anchor != -1) {
+            preload(String(anchor.href), true);
+          }
+        };
+      }
     }
   }
   /* FULLSCREEN */

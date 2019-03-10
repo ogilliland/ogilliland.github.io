@@ -3,7 +3,7 @@ layout: post
 title: "Project One"
 date: 2018-11-24
 last_modified_at: 2018-12-01
-intro: "Small project introduction goes here! Nothing too fancy."
+description: "Small project introduction goes here! Nothing too fancy."
 ---
 Some project text goes here...
 

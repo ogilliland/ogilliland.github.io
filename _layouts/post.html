@@ -11,8 +11,9 @@ layout: default
 	{% if page.image %}
 		<img class="image-full fade-up delay-md" src="{{ page.image }}">
 	{% endif %}
-  <span class="intro fade-up delay-md">{{ page.intro }}</span>
+  <span class="intro fade-up delay-md">{{ page.description }}</span>
   <hr class="fade-up delay-md">
 	<div class="fade-up delay-lg">{{ content }}</div>
+	{% include disqus.html page = page %}
 </div>
 {% include prevnext.html page = page %}

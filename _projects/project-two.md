@@ -3,7 +3,7 @@ layout: post
 title: "Project Two"
 date: 2018-11-25
 last_modified_at: 2018-12-01
-intro: "Small project introduction goes here; nothing too fancy. This one is intentionally long to see what happens when the number of characters exceeds what is expected."
+description: "Small project introduction goes here; nothing too fancy. This one is intentionally long to see what happens when the number of characters exceeds what is expected."
 ---
 Some project text goes here...
 
