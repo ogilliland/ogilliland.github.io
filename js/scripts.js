@@ -8,11 +8,6 @@ if ('scrollRestoration' in history) {
 
 /* AJAX PAGE TRANSITIONS */
 function preload(url, history) { // TO DO - cancel preload if user navigates back again before completion
-  animating = true;
-  // expand cover
-  document.getElementById('cover').style.top = null;
-  document.getElementById('cover').style.height = '100vh';
-  // document.getElementById('cover').classList.add('cover-animating');
   var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
   xhr.open('GET', url);
   xhr.onreadystatechange = function() {
@@ -26,8 +21,8 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
         // update Google Analytics
         ga('set', 'page', url.replace(/^(?:\/\/|[^\/]+)*/, ''));
         ga('send', 'pageview');
-        // TO DO - make this more efficient by firing on completion
-        tryload(xhr.responseText);
+        // write page content
+        load(xhr.responseText);
       } else {
         window.location.href = url;
       }
@@ -38,26 +33,9 @@ function preload(url, history) { // TO DO - cancel preload if user navigates bac
   return xhr;
 }
 
-function tryload(data) {
-  if (!animating) {
-    load(data);
-    // TO DO - close menu when navigating using menu
-    /* document.getElementById('nav').style.transitionDuration = '0';
-    document.getElementById('nav').style.height = '0';
-    document.getElementById('main-logo').style.color = null;
-    document.getElementById('nav').style.transitionDuration = null; */
-  } else {
-    setTimeout(function() { tryload(data) }, 100);
-  }
-}
-
 function load(data) {
   document.getElementsByTagName('main')[0].innerHTML = data.match(/<main>(.*)<\/main>/is)[1];
   window.scrollTo(0, 0);
-  // reset animation
-  animating = true;
-  document.getElementById('cover').style.top = 0;
-  document.getElementById('cover').style.height = 0;
   // reinitialise scripts
   init();
 }
@@ -73,10 +51,6 @@ function closest(elem, tag) {
     return closest(parent, tag);
   }
 }
-
-document.getElementById('cover').addEventListener('transitionend', function(event) {
-  animating = false;
-});
 
 window.onpopstate = function(event) {
   event.preventDefault();
