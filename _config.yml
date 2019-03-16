@@ -36,6 +36,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+include: ['_pages']
+
 collections:
   projects:
     output: true
