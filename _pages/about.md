@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /about/
+permalink: about/
 title: "About Me"
 heading: "My Name is Oliver Gilliland"
 description: "I'm a product designer, thing maker, artist, and educator."
