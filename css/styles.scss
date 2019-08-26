@@ -125,9 +125,9 @@ header {
   padding: 0 2rem;
   color: $color-on-bg;
   background-color: $color-bg;
-  -webkit-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -209,9 +209,9 @@ footer {
   background-color: $color-bg-dark;
   overflow: hidden;
   border: 0.3rem solid white;
-  -webkit-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
 
   & > img {
     position: absolute;
@@ -377,7 +377,7 @@ section {
 
 .project-list {
   text-align: center;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
   @include responsive("width", 90%, (
       "phone-lg": 80%,
       "tablet-lg": 70%,
@@ -399,9 +399,9 @@ section {
   color: $color-on-bg-dark;
   background-color: $color-bg-dark;
   border: 0.3rem solid white;
-  -webkit-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
 
   & > img {
     transition: opacity 0.4s ease-in-out;
@@ -424,6 +424,35 @@ section {
 
   &:hover > img {
     opacity: 0;
+  }
+}
+
+.post-list {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.post {
+  overflow: auto;
+  text-align: justify;
+  margin: 0 1rem 1rem 1rem;
+  color: $color-on-bg;
+  background-color: $color-bg;
+  border: 0.3rem solid white;
+    -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+       -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+
+  & > img {
+    float: left;
+    width: 10rem;
+    height: 10rem;
+    margin-right: 1rem;
+    object-fit: cover;
+  }
+
+  &__description {
+    padding: 1rem 1rem 0 1rem;
   }
 }
 
@@ -458,4 +487,8 @@ section {
 
 .inline-block {
   display: inline-block;
+}
+
+.space-top {
+  margin-top: 2rem;
 }

@@ -16,7 +16,7 @@ permalink: index.html
   <div class="about">
     <div class="about__text">
       {{ page.content }}
-      <a class="button button--fill" href="{{ page.url }}" role="button">Read more</a><a class="button" href="/assets/resume.pdf" role="button">View resume</a>
+      <a class="button" href="{{ page.url }}" role="button">Read more</a><a class="button" href="/assets/resume.pdf" role="button">View resume</a>
     </div>
     <div class="about__timeline">
       <div class="timeline__block">
@@ -58,7 +58,7 @@ permalink: index.html
       </div>
     </a>
     {% endfor %}
-    <a class="button button--fill" href="/work/" role="button">More work</a>
+    <a class="button space-top" href="/work/" role="button">More work</a>
   </div>
 </section>
 <section>
@@ -73,11 +73,11 @@ permalink: index.html
         {% endif %}
         <div class="post__description">
           <h3>{{ page.title }}</h3>
-          <span>{{ page.content | truncate: 300 }}</span>
+          <span>{{ page.content | truncate: 400 }}</span>
         </div>
       </div>
     </a>
     {% endfor %}
-    <a class="button button--fill" href="/blog/" role="button">More writing</a>
+    <a class="button space-top" href="/blog/" role="button">More writing</a>
   </div>
 </section>
