@@ -154,11 +154,6 @@ nav {
   }
 }
 
-section {
-  text-align: justify;
-  overflow: hidden;
-}
-
 footer {
   background-color: $color-bg-dark;
   color: $color-on-bg-dark;
@@ -246,7 +241,9 @@ footer {
 
 /* === landing page === */
 section {
-  padding: 4em 6em;
+  text-align: justify;
+  overflow: hidden;
+  padding: 4em 10%;
 
   &:nth-child(even) {
     color: $color-on-bg-light;
@@ -305,7 +302,7 @@ section {
   &__text {
     float: left;
     width: 50%;
-    padding: 0 2rem;
+    padding: 0 1rem 0 0;
   }
 
   &__timeline {
@@ -313,7 +310,7 @@ section {
     right: 0;
     width: 50%;
     height: 100%;
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 0 0 1rem;
   }
 }
 
@@ -326,10 +323,10 @@ section {
     &::before {
       content: "";
       position: absolute;
-      left: -2.25rem;
-      top: 1rem;
-      height: 0.5rem;
-      width: 0.5rem;
+      left: -2.5rem;
+      top: 0.75rem;
+      height: 1rem;
+      width: 1rem;
       border-radius: 50%;
       background-color: currentColor;
     }
@@ -337,11 +334,11 @@ section {
     &::after {
       content: "";
       position: absolute;
-      left: -2.075rem;
+      left: -2.15rem;
       top: 1rem;
       height: 100%;
       padding-bottom: 0.5rem;
-      width: 0.15rem;
+      width: 0.3rem;
       background-color: currentColor;
     }
 
@@ -396,8 +393,6 @@ section {
   padding-bottom: 30%;
   margin: 0 1.5% 3% 1.5%;
   text-align: left;
-  color: $color-on-bg-dark;
-  background-color: $color-bg-dark;
   border: 0.3rem solid white;
   -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
      -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
@@ -419,7 +414,6 @@ section {
     position: absolute;
     top: 0;
     padding: 2em;
-    background-color: $color-bg-dark;
   }
 
   &:hover > img {
@@ -436,7 +430,6 @@ section {
   overflow: auto;
   text-align: justify;
   margin: 0 1rem 1rem 1rem;
-  color: $color-on-bg;
   background-color: $color-bg;
   border: 0.3rem solid white;
     -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
