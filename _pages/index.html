@@ -4,7 +4,7 @@ permalink: index.html
 ---
 <section class="hero">
   <div class="hero__content">
-    <h1 class="hero__title font-lg">Hello, I'm Oliver Gilliland</h1>
+    <h1 class="hero__title font-lg"><span class="inline-block">Hello, I'm </span><span class="knockout inline-block">Oliver Gilliland</span></h1>
     <div class="hero__img img-container round"><img src="/assets/profile.jpg"></div>
     <span class="hero__description">Product Designer, Thing Maker, Artist, and Educator</span>
   </div>
@@ -12,33 +12,38 @@ permalink: index.html
 {% for page in site.pages %}
 {% if page.name == 'about.md' %}
 <section>
-  <h2>About Me</h2>
+  <h2 class="section__header"><span class="underline">About Me</span></h2>
   <div class="about">
-    {{ page.content }}
-    <a class="button button--fill" href="{{ page.url }}" role="button">Read more</a><a class="button" href="/assets/resume.pdf" role="button">View resume</a>
-  </div>
-  <div class="timeline">
-    <div class="timeline__block">
-      <h3>HelloFresh Global</h3>
-      <span>Product Owner, Supply Chain Tech</span>
-      <span>2016 - Present</span>
+    <div class="about__text">
+      {{ page.content }}
+      <a class="button button--fill" href="{{ page.url }}" role="button">Read more</a><a class="button" href="/assets/resume.pdf" role="button">View resume</a>
     </div>
-    <div class="timeline__block">
-      <h3>Massachusetts Institute of Technology</h3>
-      <span>Exchange Program, GPA: 4.8 / 5.0</span>
-      <span>2014 - 2015</span>
-    </div>
-    <div class="timeline__block">
-      <h3>University of Cambridge</h3>
-      <span>MEng, Manufacturing Engineering, 1st Class</span>
-      <span>2012 - 2016</span>
+    <div class="about__timeline">
+      <div class="timeline__block">
+        <h3 class="timeline__title">HelloFresh Global</h3>
+        <span class="timeline__position">Product Owner, Supply Chain Tech</span>
+        <span class="timeline__tag pill">Work</span>
+        <span class="timeline__date info-text">2016 - Present</span>
+      </div>
+      <div class="timeline__block">
+        <h3 class="timeline__title">Massachusetts Institute of Technology</h3>
+        <span class="timeline__position">Exchange Program, GPA: 4.8 / 5.0</span>
+        <span class="timeline__tag pill">Education</span>
+        <span class="timeline__date info-text">2014 - 2015</span>
+      </div>
+      <div class="timeline__block timeline__block--final">
+        <h3 class="timeline__title">University of Cambridge</h3>
+        <span class="timeline__position">MEng, Manufacturing Engineering, 1st Class</span>
+        <span class="timeline__tag pill">Education</span>
+        <span class="timeline__date info-text">2012 - 2016</span>
+      </div>
     </div>
   </div>
 </section>
 {% endif %}
 {% endfor %}
 <section>
-  <h2>Projects</h2>
+  <h2 class="section__header"><span class="underline">Projects</span></h2>
   <div class="project-list">
     {% assign sorted = (site.projects | sort: 'date') | reverse %}
     {% for page in sorted limit: 6 %}
@@ -57,7 +62,7 @@ permalink: index.html
   </div>
 </section>
 <section>
-  <h2>Writing</h2>
+  <h2 class="section__header"><span class="underline">Writing</span></h2>
   <div class="post-list">
     {% assign sorted = (site.posts | sort: 'date') | reverse %}
     {% for page in sorted limit: 4 %}
