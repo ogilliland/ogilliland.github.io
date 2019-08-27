@@ -20,7 +20,7 @@ $color-primary: #ffcc11;
 $color-on-primary: black;
 $color-bg: white;
 $color-on-bg: black;
-$color-bg-light: #f0f0f0;
+$color-bg-light: #f4f4f4;
 $color-on-bg-light: black;
 $color-bg-dark: #1e1e1e;
 $color-on-bg-dark: white;
@@ -97,7 +97,7 @@ h3 {
   display: block;
   font-family: $font-primary;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0.75em 0 0.25em 0;
   line-height: 1.5em;
 }
@@ -110,14 +110,10 @@ a {
   }
 }
 
-main {
-  overflow: hidden;
-}
-
 header {
   z-index: 100;
   position: fixed;
-  top: -3rem;
+  top: 0;
   transition: top 0.2s ease-in-out;
   width: 100vw;
   height: 3rem;
@@ -125,9 +121,9 @@ header {
   padding: 0 2rem;
   color: $color-on-bg;
   background-color: $color-bg;
-  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -154,7 +150,7 @@ nav {
   }
 }
 
-footer {
+.global-footer {
   background-color: $color-bg-dark;
   color: $color-on-bg-dark;
   width: 100vw;
@@ -179,17 +175,17 @@ footer {
   display: inline-block;
   padding: 0.5em 1em 0.5em 1em;
   margin: 0.5em;
-  -webkit-box-shadow: 0 0 0 0.15rem $color-on-bg;
-     -moz-box-shadow: 0 0 0 0.15rem $color-on-bg;
-          box-shadow: 0 0 0 0.15rem $color-on-bg;
+  -webkit-box-shadow: 0 0 0 0.125rem $color-on-bg;
+     -moz-box-shadow: 0 0 0 0.125rem $color-on-bg;
+          box-shadow: 0 0 0 0.125rem $color-on-bg;
   color: $color-on-bg;
   text-decoration: none;
   text-transform: uppercase;
 
   &:hover {
-    -webkit-box-shadow: 0 0 0 0.3rem $color-on-bg;
-       -moz-box-shadow: 0 0 0 0.3rem $color-on-bg;
-            box-shadow: 0 0 0 0.3rem $color-on-bg;
+    -webkit-box-shadow: 0 0 0 0.25rem $color-on-bg;
+       -moz-box-shadow: 0 0 0 0.25rem $color-on-bg;
+            box-shadow: 0 0 0 0.25rem $color-on-bg;
   }
 
   &:hover, &.button--fill {
@@ -204,9 +200,9 @@ footer {
   background-color: $color-bg-dark;
   overflow: hidden;
   border: 0.3rem solid white;
-  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
 
   & > img {
     position: absolute;
@@ -243,7 +239,7 @@ footer {
 section {
   text-align: justify;
   overflow: hidden;
-  padding: 4em 10%;
+  padding: 4em 0;
 
   &:nth-child(even) {
     color: $color-on-bg-light;
@@ -277,7 +273,7 @@ section {
     width: 30%;
     height: 0;
     padding-bottom: 30%;
-    margin: 3em 0;
+    margin: 3rem 0;
   }
 
   &__description {
@@ -298,6 +294,8 @@ section {
 .about {
   position: relative;
   overflow: hidden;
+  width: 60%;
+  margin: auto;
 
   &__text {
     float: left;
@@ -310,7 +308,7 @@ section {
     right: 0;
     width: 50%;
     height: 100%;
-    padding: 0.5rem 0 0 1rem;
+    padding: 1rem 0 0 1rem;
   }
 }
 
@@ -324,7 +322,7 @@ section {
       content: "";
       position: absolute;
       left: -2.5rem;
-      top: 0.75rem;
+      top: 0.25rem;
       height: 1rem;
       width: 1rem;
       border-radius: 50%;
@@ -335,14 +333,14 @@ section {
       content: "";
       position: absolute;
       left: -2.15rem;
-      top: 1rem;
+      top: 0.5rem;
       height: 100%;
       padding-bottom: 0.5rem;
       width: 0.3rem;
       background-color: currentColor;
     }
 
-    &--final::after {
+    &--last::after {
       background: repeating-linear-gradient(
         $color-on-bg,
         $color-on-bg 0.5rem,
@@ -355,15 +353,15 @@ section {
 
   &__title {
     margin: 0;
+    white-space: nowrap;
   }
 
   &__position {
     display: block;
+    white-space: nowrap;
   }
 
   &__tag {
-    text-transform: uppercase;
-    font-size: 0.75rem;
     margin-right: 0.15rem;
   }
 
@@ -373,15 +371,9 @@ section {
 }
 
 .project-list {
+  width: 60%;
   text-align: center;
   margin: 3rem auto 0 auto;
-  @include responsive("width", 90%, (
-      "phone-lg": 80%,
-      "tablet-lg": 70%,
-      "desktop-sm": 60%,
-      "desktop-md": 50%
-    )
-  );
 }
 
 .project {
@@ -392,11 +384,14 @@ section {
   height: 0;
   padding-bottom: 30%;
   margin: 0 1.5% 3% 1.5%;
-  text-align: left;
+  color: $color-on-bg;
+  background-color: $color-bg;
   border: 0.3rem solid white;
-  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.4s ease-in-out;
 
   & > img {
     transition: opacity 0.4s ease-in-out;
@@ -410,31 +405,45 @@ section {
     z-index: 20;
   }
 
-  &__description {
+  &__content {
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
     padding: 2em;
+    text-align: center;
   }
 
-  &:hover > img {
-    opacity: 0;
+  &:hover {
+    -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.5);
+
+    & > img {
+      opacity: 0;
+    }
   }
 }
 
 .post-list {
-  margin-top: 3rem;
+  width: 60%;
+  margin: 3.25rem auto 0 auto;
   text-align: center;
 }
 
 .post {
-  overflow: auto;
+  overflow: hidden;
   text-align: justify;
   margin: 0 1rem 1rem 1rem;
+  color: $color-on-bg;
   background-color: $color-bg;
+  height: 10rem;
   border: 0.3rem solid white;
-    -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-       -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
-            box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.4s ease-in-out;
 
   & > img {
     float: left;
@@ -444,12 +453,77 @@ section {
     object-fit: cover;
   }
 
-  &__description {
-    padding: 1rem 1rem 0 1rem;
+  &__title {
+    margin-top: 0;
+  }
+
+  &__content {
+    padding: 0.5rem 1rem;
+  }
+
+  &__date {
+    margin-left: 0.15rem;
+  }
+
+  &__intro {
+    position: relative;
+    top: -0.5rem;
+  }
+
+  &:hover {
+    -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* === post and list pages === */
+.page {
+  width: 60%;
+  margin: 6rem auto;
+  text-align: justify;
+  overflow: hidden;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.25rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: 0;
+    padding-bottom: 40%;
+  }
+
+  &__tag {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    position: relative;
+    top: -0.5rem;
+    text-decoration: none;
+    color: $color-bg;
+    background-color: $color-on-bg;
+    border-radius: 0.15rem;
+    padding: 0.2rem 0.5rem;
+
+    &:hover {
+      color: $color-bg;
+      background-color: $color-mid;
+    }
+  }
+
+  &__info {
+    display: block;
+    margin-bottom: 0.25rem;
   }
 }
 
 /* === utility classes === */
+.full-width {
+  width: 100%;
+}
+
 .no-underline {
   text-decoration: none;
 }
@@ -474,12 +548,18 @@ section {
 .pill {
   color: $color-bg;
   background-color: $color-on-bg;
-  padding: 0 0.3rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 0.15rem;
+  text-transform: uppercase;
+  font-size: 0.75em;
 }
 
 .inline-block {
   display: inline-block;
+}
+
+.block {
+  display: block;
 }
 
 .space-top {
