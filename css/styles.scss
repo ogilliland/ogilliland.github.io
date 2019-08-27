@@ -235,6 +235,29 @@ nav {
   color: $color-mid;
 }
 
+.fullscreen {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__description {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: $font-primary;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+}
+
 /* === landing page === */
 section {
   text-align: justify;
@@ -526,6 +549,11 @@ section {
 
 .no-underline {
   text-decoration: none;
+}
+
+.font-2x {
+  font-size: 2em;
+  margin-bottom: 0.25em;
 }
 
 .round {
