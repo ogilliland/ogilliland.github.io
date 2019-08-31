@@ -1,11 +1,23 @@
 ---
-layout: default
+layout: list
 permalink: work/
 title: "Projects"
 ---
-<div id="fullscreen">
-  <div class="card center-both">
-    <span class="title large fade-up delay-sm">{{ page.title }}</span>
-    <span class="intro large fade-up delay-md">Projects should appear here!</span>
-  </div>
+<div class="project-list full-width">
+  {% assign sorted = (site.projects | sort: 'date') | reverse %}
+  {% for post in sorted %}
+  <a class="no-underline" href="{{ post.url }}" aria-label="view project">
+    <div class="project">
+      {% if post.image %}
+      <img src="{{ post.image }}">
+      {% endif %}
+      <div class="project__content">
+        <h3 class="project__title">{{ post.title }}</h3>
+        {% for tag in post.tags %}
+        <span class="project__tag pill">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </a>
+  {% endfor %}
 </div>

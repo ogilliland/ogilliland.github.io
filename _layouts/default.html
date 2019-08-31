@@ -1,85 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-
-    <!-- Google Analytics -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-130213644-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-
-    <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    
-    {% seo title=false %}
-
-    {% include head.html %}
-
-    <!-- scripts will be loaded here -->
-  </head>
-
+  {% include head.html %}
   <body>
-
-    <header>
-      {% include header.html %}
-      <div id="pagination" style="display: none;">
-        <a onclick="upSection()" style="cursor: pointer; cursor: hand;">❮</a>
-        <span id="section-current">#</span>/<span id="section-total">#</span>
-        <a onclick="downSection()" style="cursor: pointer; cursor: hand;">❯</div></a>
-      </div>
-    </header>
-
+    {% include header.html %}
     <main>
       {{ content }}
     </main>
-
-    <!-- load scripts -->
+    {% include footer.html %}
+    <!-- show / hide header -->
     <script type="text/javascript">
-      var seq = ['/js/scripts.js'];
-
-      function loadScript( url, callback ) {
-
-        var script = document.createElement( "script" )
-        script.type = "text/javascript";
-
-        if(script.readyState) {  // IE
-          script.onreadystatechange = function() {
-            if ( script.readyState === "loaded" || script.readyState === "complete" ) {
-              script.onreadystatechange = null;
-              callback();
-            }
-          }
-        } else {  // others
-          script.onload = function() {
-            callback();
-          }
+      var debounce = false;
+      var debounceDur = 100; // ms
+      var minScroll = 100; // px
+      var hotZone = 75; //px
+      var mouseY;
+      moveHeader(); // reset on first load
+      document.addEventListener("wheel", function(e) {
+        if (debounce) { return; }
+        debounce = true;
+        setTimeout(function() {
+          debounce = false;
+        }, debounceDur);
+        moveHeader();
+      });
+      document.addEventListener("mousemove", function(e) {
+        if (debounce) { return; }
+        debounce = true;
+        setTimeout(function() {
+          debounce = false;
+        }, debounceDur);
+        mouseY = e.clientY;
+        moveHeader();
+      });
+      function moveHeader(posY) {
+        if(window.pageYOffset < minScroll || mouseY < hotZone) {
+          document.getElementById("header").style.top = 0;
+        } else {
+          document.getElementById("header").style.top = "-3em";
         }
-
-        script.src = url;
-        document.getElementsByTagName('head')[0].appendChild(script);
-      }
-
-      window.onload = function() {
-
-        function iter(i) {
-          loadScript(seq[i], function() {
-            if(i+1 < seq.length) {
-              iter(i+1);
-            } else {
-              init();
-            }
-          });
-        }
-
-        iter(0);
-
       }
     </script>
-
   </body>
-
 </html>

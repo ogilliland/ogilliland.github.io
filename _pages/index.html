@@ -2,31 +2,89 @@
 layout: default
 permalink: index.html
 ---
-<div id="fullscreen">
-  {% for page in site.pages %}
-    {% if page.name == 'about.md' %}
-      <section>
-        <div class="card center-both">
-          <a class="title large fade-up delay-sm" href="{{ page.url }}">{% include title.html page = page %}</a>
-          <span class="intro large fade-up delay-md">{{ page.description | truncate: 120 }} <a class="underline" href="{{ page.url }}">About me.</a></span>
+<section class="hero">
+  <div class="hero__content">
+    <h1 class="hero__title font-lg"><span class="block">Hello, I'm </span><span class="knockout block">Oliver Gilliland</span></h1>
+    <div class="hero__img img-container round"><img src="/assets/profile.jpg" alt="profile picture"></div>
+    <span class="hero__description">Product Designer, Thing Maker, Artist, and Educator</span>
+  </div>
+</section>
+{% for page in site.pages %}
+{% if page.name == 'about.md' %}
+<section>
+  <h2 class="section__header"><span class="underline">About Me</span></h2>
+  <div class="about">
+    <div class="about__text">
+      {{ page.content }}
+      <a class="button button--fill" href="{{ page.url }}" role="button">Read more</a><a class="button" href="/assets/resume.pdf" role="button">View resume</a>
+    </div>
+    <div class="about__timeline">
+      <div class="timeline__block">
+        <h3 class="timeline__title">HelloFresh Global</h3>
+        <span class="timeline__position">Product Owner, Supply Chain Tech</span>
+        <span class="timeline__tag pill">Work</span>
+        <span class="timeline__date info-text">2016 - Present</span>
+      </div>
+      <div class="timeline__block">
+        <h3 class="timeline__title">Massachusetts Institute of Technology</h3>
+        <span class="timeline__position">Exchange Program, GPA: 4.8 / 5.0</span>
+        <span class="timeline__tag pill">Education</span>
+        <span class="timeline__date info-text">2014 - 2015</span>
+      </div>
+      <div class="timeline__block timeline__block--last">
+        <h3 class="timeline__title">University of Cambridge</h3>
+        <span class="timeline__position">MEng, Manufacturing Engineering, 1st Class</span>
+        <span class="timeline__tag pill">Education</span>
+        <span class="timeline__date info-text">2012 - 2016</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+<section>
+  <h2 class="section__header"><span class="underline">Projects</span></h2>
+  <div class="project-list">
+    {% assign sorted = (site.projects | sort: 'date') | reverse %}
+    {% for post in sorted limit: 6 %}
+    <a class="no-underline" href="{{ post.url }}" aria-label="view project">
+      <div class="project">
+        {% if post.image %}
+        <img src="{{ post.image }}">
+        {% endif %}
+        <div class="project__content">
+          <h3 class="project__title">{{ post.title }}</h3>
+          {% for tag in post.tags %}
+          <span class="project__tag pill">{{ tag }}</span>
+          {% endfor %}
         </div>
-      </section>
-    {% endif %}
-  {% endfor %}
-  {% assign page = site.projects.last %}
-  <section>
-    <div class="card center-both">
-      <span class="breadcrumb fade-in delay-sm"><a href="/work/">work</a> → <a href="{{ page.url }}">latest</a></span>
-      <a class="title large fade-up delay-sm" href="{{ page.url }}">{% include title.html page = page %}</a>
-      <span class="intro large fade-up delay-md">{{ page.description | truncate: 120 }} <a class="underline" href="{{ page.url }}">Read more.</a></span>
-    </div>
-  </section>
-  {% assign page = site.posts.first %}
-  <section>
-    <div class="card center-both">
-      <span class="breadcrumb fade-in delay-sm"><a href="/blog/">blog</a> → <a href="{{ page.url }}">latest</a></span>
-      <a class="title large fade-up delay-sm" href="{{ page.url }}">{% include title.html page = page %}</a>
-      <span class="intro large fade-up delay-md">{{ page.description | truncate: 120 }} <a class="underline" href="{{ page.url }}">Read more.</a></span>
-    </div>
-  </section>
-</div>
+      </div>
+    </a>
+    {% endfor %}
+    <a class="button button--fill space-top" href="/work/" role="button">More work</a>
+  </div>
+</section>
+<section>
+  <h2 class="section__header"><span class="underline">Writing</span></h2>
+  <div class="post-list">
+    {% assign sorted = (site.posts | sort: 'date') | reverse %}
+    {% for post in sorted limit: 4 %}
+    <a class="no-underline" href="{{ post.url }}" aria-label="continue reading">
+      <div class="post">
+        {% if post.image %}
+        <img src="{{ post.image }}">
+        {% endif %}
+        <div class="post__content">
+          <h3 class="post__title">{{ post.title }}</h3>
+          {% for tag in post.tags %}
+          <span class="post__tag pill">{{ tag }}</span>
+          {% endfor %}
+          <span class="post__date info-text">{{ post.date | date: "%d %b %Y" }}</span>
+          <span class="post__intro">{{ post.content | strip_html | truncate: 250 }}</span>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+    <a class="button button--fill space-top" href="/blog/" role="button">More writing</a>
+  </div>
+</section>

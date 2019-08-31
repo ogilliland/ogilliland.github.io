@@ -1,12 +1,6 @@
 {% if page.collection %}
   {% assign posts = site[page.collection] | where: "layout", "post" | sort: "date" %}
 
-  {% if page.collection == "projects" %}
-    {% assign dir = "/work/" %}
-  {% elsif page.collection == "posts" %}
-    {% assign dir = "/blog/" %}
-  {% endif %}
-
   {% for post in posts %}
     {% if post.title == page.title %}
       {% unless forloop.first %}
@@ -20,10 +14,9 @@
   {% endfor %}
 
   {% if posts.size > 1 %}
-  <div id="prev-next">
-    <div id="link-prev">{% if prev %}<a href="{{ prev.url }}"><span class="intro">Prev.</span><span class="title small">{{ prev.title }}</span></a>{% endif %}</div>
-    <!-- <div id="link-dir">{% if dir %}<a href="{{ dir }}"><span class="intro-md">View All</span></a>{% endif %}</div> -->
-    <div id="link-next">{% if next %}<a href="{{ next.url }}"><span class="intro">Next</span><span class="title small">{{ next.title }}</span></a>{% endif %}</div>
+  <div class="prev-next">
+    {% if prev %}<a href="{{ prev.url }}" class="link-prev"><span class="link-prev__title">{{ prev.title }}</span></a>{% endif %}
+    {% if next %}<a href="{{ next.url }}" class="link-next"><span class="link-next__title">{{ next.title }}</span></a>{% endif %}
   </div>
   {% endif %}
 {% endif %}

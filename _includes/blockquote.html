@@ -1,0 +1,15 @@
+<figure class="quote">
+  <blockquote>
+    <p>{{ include.quote }}</p>
+  </blockquote>
+  {% if include.author %}
+  <figcaption class="quote-source">
+    <span class="quote-author {% if include.title %}comma{% endif %}">{{ include.author }}</span>
+    {% if include.title and include.url %}
+    <cite class="quote-title"><a href="{{ include.url }}" target="_blank" class="external">{{ include.title }}</a></cite>
+    {% elsif include.title %}
+    <cite class="quote-title">{{ include.title }}</cite>
+    {% endif %}
+  </figcaption>
+  {% endif %}
+</figure>

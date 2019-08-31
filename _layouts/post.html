@@ -1,19 +1,37 @@
 ---
 layout: default
 ---
-<div class="post">
-	<h1 class="title fade-up delay-sm">{% include title.html page = page %}</h1>
-	{% if page.collection == "posts" %}
-		<span class="date fade-up delay-sm">
-			{{ page.date | date: "%d %b %y" }}<span style="padding-left:0.5em; padding-right:0.5em;"> • </span>{% include words.html content = content %}
+<article class="page">
+	<div class="page__header underline">
+		{% include title.html page = page %}
+		{% for tag in page.tags %}
+		<a class="page__tag" href="/search/{{ tag }}">{{ tag }}</a>
+		{% endfor %}
+		{% if page.collection == "posts" %}
+		<span class="page__info info-text">
+			{{ page.date | date: "%d %b %Y" }}&nbsp;&nbsp;·&nbsp;&nbsp;{% include words.html content = content %}
 		</span>
-	{% endif %}
+		{% endif %}
+	</div>
 	{% if page.image %}
-		<img class="image-full fade-up delay-md" src="{{ page.image }}">
+	<div class="page__img img-container flat"><img src="{{ page.image }}"></div>
 	{% endif %}
-  <span class="intro fade-up delay-md">{{ page.description }}</span>
-  <hr class="fade-up delay-md">
-	<div class="fade-up delay-lg">{{ content }}</div>
-	{% include disqus.html page = page %}
-</div>
-{% include prevnext.html page = page %}
+	{{ content }}
+	<footer>
+		{% include prevnext.html page = page %}
+		{% include disqus.html page = page %}
+	</footer>
+</article>
+<!-- add links to headings -->
+<script type="text/javascript">
+  var headings = document.querySelectorAll("h2, h3");
+  headings.forEach(function(heading) {
+  	if(heading.id) {
+	    link = document.createElement("a");
+	    link.setAttribute("href", "#" + heading.id);
+	    link.setAttribute("class", "local-anchor");
+	    link.innerHTML = "<i class=\"fa fa-link\" aria-hidden=\"true\"></i>";
+	    heading.appendChild(link);
+	  }
+  });
+</script>
