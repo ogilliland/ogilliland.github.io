@@ -3,18 +3,18 @@ layout: default
 ---
 <article class="page">
 	<div class="page__header underline">
-		<h1>{% include title.html page = page %}</h1>
+		{% include title.html page = page %}
 		{% for tag in page.tags %}
 		<a class="page__tag" href="/search/{{ tag }}">{{ tag }}</a>
 		{% endfor %}
 		{% if page.collection == "posts" %}
 		<span class="page__info info-text">
-			{{ page.date | date: "%d %b %Y" }}, {% include words.html content = content %}
+			{{ page.date | date: "%d %b %Y" }}&nbsp;&nbsp;·&nbsp;&nbsp;{% include words.html content = content %}
 		</span>
 		{% endif %}
 	</div>
 	{% if page.image %}
-	<div class="page__img img-container"><img src="{{ page.image }}"></div>
+	<div class="page__img img-container flat"><img src="{{ page.image }}"></div>
 	{% endif %}
 	{{ content }}
 	<footer>
@@ -22,3 +22,16 @@ layout: default
 		{% include disqus.html page = page %}
 	</footer>
 </article>
+<!-- add links to headings -->
+<script type="text/javascript">
+  var headings = document.querySelectorAll("h2, h3");
+  headings.forEach(function(heading) {
+  	if(heading.id) {
+	    link = document.createElement("a");
+	    link.setAttribute("href", "#" + heading.id);
+	    link.setAttribute("class", "local-anchor");
+	    link.innerHTML = "<i class=\"fa fa-link\" aria-hidden=\"true\"></i>";
+	    heading.appendChild(link);
+	  }
+  });
+</script>

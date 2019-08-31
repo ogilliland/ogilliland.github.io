@@ -6,7 +6,7 @@ title: "Projects"
 <div class="project-list full-width">
   {% assign sorted = (site.projects | sort: 'date') | reverse %}
   {% for post in sorted %}
-  <a class="no-underline" href="{{ page.url }}" aria-label="view project">
+  <a class="no-underline" href="{{ post.url }}" aria-label="view project">
     <div class="project">
       {% if post.image %}
       <img src="{{ post.image }}">

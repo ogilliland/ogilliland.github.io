@@ -1,1 +1,13 @@
-{% if include.page.heading %}{{ include.page.heading }}{% else %}{{ include.page.title }}{% endif %}
+{% if page.heading %}
+	{% assign title = page.heading %}
+{% else %}
+	{% assign title = page.title %}
+{% endif %}
+
+{% if title.size > 30 %}
+	<h1 class="font-sm">{{ title }}</h1>
+{% elsif title.size > 20 %}
+	<h1>{{ title }}</h1>
+{% else %}
+	<h1 class="font-lg">{{ title }}</h1>
+{% endif %}

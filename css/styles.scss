@@ -15,15 +15,17 @@ $named-breakpoints: (
 $font-primary: Lato, Helvetica, Arial, sans-serif;
 $font-secondary: "Open Sans", Helvetica, Arial, sans-serif;
 
-$color-mid: #808080;
 $color-primary: #ffcc11;
 $color-on-primary: black;
-$color-bg: white;
-$color-on-bg: black;
-$color-bg-light: #f4f4f4;
-$color-on-bg-light: black;
-$color-bg-dark: #1e1e1e;
-$color-on-bg-dark: white;
+$color-secondary: white;
+$color-on-secondary: black;
+
+$color-acc-light: #f4f4f4;
+$color-on-acc-light: black;
+$color-acc-mid: #808080;
+$color-on-acc-mid: black;
+$color-acc-dark: #1e1e1e;
+$color-on-acc-dark: white;
 
 /* === global styles === */
 * {
@@ -31,8 +33,8 @@ $color-on-bg-dark: white;
 }
 
 html, body {
-  color: $color-on-bg;
-  background-color: $color-bg;
+  color: $color-on-secondary;
+  background-color: $color-secondary;
 }
 
 body {
@@ -72,7 +74,7 @@ h1 {
   font-family: $font-primary;
   font-weight: 700;
   font-size: 4rem;
-  margin: 0.75em 0 0.25em 0;
+  margin: 0.5em 0 0.25em 0;
   line-height: 1.25em;
 
   &.font-lg {
@@ -89,7 +91,7 @@ h2 {
   font-family: $font-primary;
   font-weight: 700;
   font-size: 3rem;
-  margin: 0.75em 0 0.25em 0;
+  margin: 0.5em 0 0.25em 0;
   line-height: 1.25em;
 }
 
@@ -97,8 +99,8 @@ h3 {
   display: block;
   font-family: $font-primary;
   font-weight: 700;
-  font-size: 1rem;
-  margin: 0.75em 0 0.25em 0;
+  font-size: 1.5rem;
+  margin: 0.5em 0 0.25em 0;
   line-height: 1.5em;
 }
 
@@ -106,7 +108,69 @@ a {
   color: currentColor;
 
   &:hover {
-    color: $color-mid;
+    color: $color-acc-mid;
+  }
+
+  &.external::after {
+    font-family: FontAwesome;
+    font-style: normal;
+    content: " \f08e";
+    font-size: 0.75rem;
+  }
+}
+
+figure {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: $color-acc-mid;
+  background-color: $color-acc-light;
+  padding: 1rem;
+
+  .gutter {
+    padding-right: 2rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+
+  code {
+    padding: 0;
+  }
+}
+
+code {
+  color: $color-acc-mid;
+  background-color: $color-acc-light;
+  padding: 0.05rem 0.3rem 0.1rem 0.3rem;
+}
+
+pre {
+  margin: 0;
+}
+
+blockquote {
+  margin: 0;
+  margin-left: 1rem;
+  color: $color-acc-mid;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.quote {
+  border-left: 0.3rem solid $color-acc-mid;
+
+  &-source {
+    text-align: right;
+  }
+
+  &-author.comma::after {
+    content: ", ";
   }
 }
 
@@ -119,8 +183,8 @@ header {
   height: 3rem;
   line-height: 3rem;
   padding: 0 2rem;
-  color: $color-on-bg;
-  background-color: $color-bg;
+  color: $color-on-secondary;
+  background-color: $color-secondary;
   -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
      -moz-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
@@ -151,8 +215,8 @@ nav {
 }
 
 .global-footer {
-  background-color: $color-bg-dark;
-  color: $color-on-bg-dark;
+  background-color: $color-acc-dark;
+  color: $color-on-acc-dark;
   width: 100vw;
   padding: 4rem;
   text-align: center;
@@ -175,29 +239,29 @@ nav {
   display: inline-block;
   padding: 0.5em 1em 0.5em 1em;
   margin: 0.5em;
-  -webkit-box-shadow: 0 0 0 0.125rem $color-on-bg;
-     -moz-box-shadow: 0 0 0 0.125rem $color-on-bg;
-          box-shadow: 0 0 0 0.125rem $color-on-bg;
-  color: $color-on-bg;
+  -webkit-box-shadow: 0 0 0 0.125rem $color-on-secondary;
+     -moz-box-shadow: 0 0 0 0.125rem $color-on-secondary;
+          box-shadow: 0 0 0 0.125rem $color-on-secondary;
+  color: $color-on-secondary;
   text-decoration: none;
   text-transform: uppercase;
 
   &:hover {
-    -webkit-box-shadow: 0 0 0 0.25rem $color-on-bg;
-       -moz-box-shadow: 0 0 0 0.25rem $color-on-bg;
-            box-shadow: 0 0 0 0.25rem $color-on-bg;
+    -webkit-box-shadow: 0 0 0 0.25rem $color-on-secondary;
+       -moz-box-shadow: 0 0 0 0.25rem $color-on-secondary;
+            box-shadow: 0 0 0 0.25rem $color-on-secondary;
   }
 
   &:hover, &.button--fill {
-    color: $color-bg;
-    background-color: $color-on-bg;
+    color: $color-secondary;
+    background-color: $color-on-secondary;
   }
 }
 
 .img-container {
   position: relative;
-  color: $color-on-bg-dark;
-  background-color: $color-bg-dark;
+  color: $color-on-acc-dark;
+  background-color: $color-acc-dark;
   overflow: hidden;
   border: 0.3rem solid white;
   -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
@@ -232,7 +296,7 @@ nav {
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 700;
-  color: $color-mid;
+  color: $color-acc-mid;
 }
 
 .fullscreen {
@@ -258,6 +322,30 @@ nav {
   }
 }
 
+.footnotes {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 0.15rem solid $color-on-secondary;
+}
+
+.footnote {
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.reversefootnote {
+  text-decoration: none;
+}
+
+.local-anchor {
+  position: absolute;
+  left: 20%;
+  width: calc(60% + 3rem);
+  margin-left: -3rem;
+  color: $color-acc-light;
+  font-size: 2rem;
+}
+
 /* === landing page === */
 section {
   text-align: justify;
@@ -265,11 +353,11 @@ section {
   padding: 4em 0;
 
   &:nth-child(even) {
-    color: $color-on-bg-light;
-    background-color: $color-bg-light;
+    color: $color-on-acc-light;
+    background-color: $color-acc-light;
   }
 
-  & > h1,h2,h3 {
+  h1,h2,h3 {
     margin-top: 0;
   }
 }
@@ -331,7 +419,7 @@ section {
     right: 0;
     width: 50%;
     height: 100%;
-    padding: 1rem 0 0 1rem;
+    padding: 0.75rem 0 0 1rem;
   }
 }
 
@@ -345,7 +433,7 @@ section {
       content: "";
       position: absolute;
       left: -2.5rem;
-      top: 0.25rem;
+      top: 0.65rem;
       height: 1rem;
       width: 1rem;
       border-radius: 50%;
@@ -356,7 +444,7 @@ section {
       content: "";
       position: absolute;
       left: -2.15rem;
-      top: 0.5rem;
+      top: 0.65rem;
       height: 100%;
       padding-bottom: 0.5rem;
       width: 0.3rem;
@@ -365,8 +453,8 @@ section {
 
     &--last::after {
       background: repeating-linear-gradient(
-        $color-on-bg,
-        $color-on-bg 0.5rem,
+        $color-on-secondary,
+        $color-on-secondary 0.5rem,
         rgba(0, 0, 0, 0) 0.5rem,
         rgba(0, 0, 0, 0) 1rem
       );
@@ -407,8 +495,8 @@ section {
   height: 0;
   padding-bottom: 30%;
   margin: 0 1.5% 3% 1.5%;
-  color: $color-on-bg;
-  background-color: $color-bg;
+  color: $color-on-secondary;
+  background-color: $color-secondary;
   border: 0.3rem solid white;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
@@ -459,8 +547,8 @@ section {
   overflow: hidden;
   text-align: justify;
   margin: 0 1rem 1rem 1rem;
-  color: $color-on-bg;
-  background-color: $color-bg;
+  color: $color-on-secondary;
+  background-color: $color-secondary;
   height: 10rem;
   border: 0.3rem solid white;
   -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.25);
@@ -477,7 +565,12 @@ section {
   }
 
   &__title {
-    margin-top: 0;
+    margin-top: -0.4rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    top: 0.2rem;
   }
 
   &__content {
@@ -489,8 +582,9 @@ section {
   }
 
   &__intro {
+    display: block;
     position: relative;
-    top: -0.5rem;
+    top: 0.5rem;
   }
 
   &:hover {
@@ -500,12 +594,76 @@ section {
   }
 }
 
+.img-full {
+  width: 100%;
+}
+
+.img-left, .img-right {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.img-left {
+  float: left;
+  padding-right: 1rem;
+}
+
+.img-right {
+  float: right;
+  padding-left: 1rem;
+}
+
+.pullquote-full {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  content: "\201C\00A0" attr(data-quote) "\00A0\201D";
+  font-size: 2em;
+
+  &::before {
+    content: "\201C\00A0";
+  }
+
+  &::after {
+    content: "\00A0\201D";
+  }
+}
+
+.pullquote-left,
+.pullquote-right {
+  font-style: normal;
+}
+
+.pullquote-right::after,
+.pullquote-left::after {
+  text-align: center;
+  font-style: italic;
+  content: "\201C\00A0" attr(data-quote) "\00A0\201D";
+  width: 35%;
+  font-size: 2em;
+  margin: 1rem 1rem;
+}
+
+.pullquote-left::after {
+  float: left;
+  margin-left: 0;
+}
+
+.pullquote-right::after {
+  float: right;
+  margin-right: 0;
+}
+
 /* === post and list pages === */
+.box {
+  border: 0.15rem solid $color-on-secondary;
+  padding: 0.3rem 0.7rem;
+}
+
 .page {
   width: 60%;
   margin: 6rem auto;
   text-align: justify;
-  overflow: hidden;
 
   &__header {
     text-align: center;
@@ -525,14 +683,14 @@ section {
     position: relative;
     top: -0.5rem;
     text-decoration: none;
-    color: $color-bg;
-    background-color: $color-on-bg;
+    color: $color-secondary;
+    background-color: $color-on-secondary;
     border-radius: 0.15rem;
     padding: 0.2rem 0.5rem;
 
     &:hover {
-      color: $color-bg;
-      background-color: $color-mid;
+      color: $color-secondary;
+      background-color: $color-acc-mid;
     }
   }
 
@@ -543,8 +701,19 @@ section {
 }
 
 /* === utility classes === */
+.flat {
+  border: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
 .full-width {
   width: 100%;
+}
+
+.clear {
+  overflow: hidden;
 }
 
 .no-underline {
@@ -561,21 +730,21 @@ section {
 }
 
 .knockout {
-  color: $color-on-bg;
-  -webkit-text-fill-color: $color-bg; // override default color
+  color: $color-on-secondary;
+  -webkit-text-fill-color: $color-secondary; // override default color
   -webkit-text-stroke-width: 0.15rem;
   -webkit-text-stroke-color: black;
 }
 
-.highlight {
-  color: $color-bg;
-  background-color: $color-on-bg;
+.redacted {
+  color: $color-secondary;
+  background-color: $color-on-secondary;
   padding: 0 0.75rem;
 }
 
 .pill {
-  color: $color-bg;
-  background-color: $color-on-bg;
+  color: $color-secondary;
+  background-color: $color-on-secondary;
   padding: 0.2rem 0.5rem;
   border-radius: 0.15rem;
   text-transform: uppercase;

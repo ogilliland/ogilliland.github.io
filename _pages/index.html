@@ -80,7 +80,7 @@ permalink: index.html
           <span class="post__tag pill">{{ tag }}</span>
           {% endfor %}
           <span class="post__date info-text">{{ post.date | date: "%d %b %Y" }}</span>
-          <span class="post__intro">{{ post.content | truncate: 250 }}</span>
+          <span class="post__intro">{{ post.content | strip_html | truncate: 250 }}</span>
         </div>
       </div>
     </a>

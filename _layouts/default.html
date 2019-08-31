@@ -12,6 +12,8 @@
       var debounce = false;
       var debounceDur = 100; // ms
       var minScroll = 100; // px
+      var hotZone = 75; //px
+      var mouseY;
       moveHeader(); // reset on first load
       document.addEventListener("wheel", function(e) {
         if (debounce) { return; }
@@ -21,8 +23,17 @@
         }, debounceDur);
         moveHeader();
       });
-      function moveHeader() {
-        if(window.pageYOffset > minScroll) {
+      document.addEventListener("mousemove", function(e) {
+        if (debounce) { return; }
+        debounce = true;
+        setTimeout(function() {
+          debounce = false;
+        }, debounceDur);
+        mouseY = e.clientY;
+        moveHeader();
+      });
+      function moveHeader(posY) {
+        if(window.pageYOffset < minScroll || mouseY < hotZone) {
           document.getElementById("header").style.top = 0;
         } else {
           document.getElementById("header").style.top = "-3em";
