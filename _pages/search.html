@@ -1,7 +1,15 @@
 ---
-layout: archive
+layout: default
 permalink: search/
-title: "Search Results"
-redirect_from:
-  - search/tag/
+title: "Search"
 ---
+<div class="page clear">
+	<div class="page__header underline">
+		<h1>Search For...</h1>
+		<input id="search-input" type="text" name="search">
+	</div>
+	<div id="search-result" class="post-list full-width">
+	</div>
+</div>
+<!-- client-side search -->
+<script type="text/javascript" src="/js/search.js"></script>

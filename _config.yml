@@ -42,11 +42,3 @@ collections:
   projects:
     output: true
     permalink: /work/:name/
-
-jekyll-archives:
-  enabled:
-    - tag
-  layouts:
-    tag: archive
-  permalinks:
-    tag: /search/tag/:name/

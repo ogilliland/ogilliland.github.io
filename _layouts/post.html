@@ -5,7 +5,7 @@ layout: default
 	<div class="page__header underline">
 		{% include title.html page = page %}
 		{% for tag in page.tags %}
-		<a class="page__tag" href="/search/{{ tag }}">{{ tag }}</a>
+		<a class="page__tag" href="/search/?q=tag:{{ tag }}">{{ tag }}</a>
 		{% endfor %}
 		{% if page.collection == "posts" %}
 		<span class="page__info info-text">
