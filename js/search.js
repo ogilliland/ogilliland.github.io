@@ -61,7 +61,7 @@ function searchFor(query) {
 
 	for(var i = 0; i < search.length; i++) {
 		if(search[i].weight == 0) { break; }
-		result.innerHTML += search[i].html;
+		result.innerHTML += search[i].html.replace(/(href="[^"]*)"/i, "$1?highlight=" + encodeURIComponent(query) + "\"");
 	}
 }
 
@@ -73,12 +73,12 @@ function getMatches(query, text) {
 
 	try {
 	  var regex = new RegExp(query, "gi");
-	} catch(e) {
+	} catch {
 		isValid = false;
 	}
 
 	if(isValid) {
-			result = (text.match(regex) || []).length;
+		result = (text.match(regex) || []).length;
 	}
 
 	return result;

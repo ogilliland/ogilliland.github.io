@@ -834,6 +834,11 @@ section {
   padding: 0 0.75rem;
 }
 
+.attn {
+  color: $color-on-primary;
+  background-color: $color-primary;
+}
+
 .pill {
   color: $color-secondary;
   background-color: $color-on-secondary;

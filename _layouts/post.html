@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="page">
+<article id="page" class="page">
 	<div class="page__header underline">
 		{% include title.html page = page %}
 		{% for tag in page.tags %}
@@ -35,3 +35,5 @@ layout: default
 	  }
   });
 </script>
+<!-- search term highlighting -->
+<script type="text/javascript" src="/js/highlight.js"></script>
