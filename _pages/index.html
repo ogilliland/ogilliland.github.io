@@ -42,6 +42,8 @@ permalink: index.html
 </section>
 {% endif %}
 {% endfor %}
+{% assign psize = site.projects | size %}
+{% if psize > 0 %}
 <section>
   <h2 class="section__header"><span class="underline">Projects</span></h2>
   <div class="project-list">
@@ -64,6 +66,9 @@ permalink: index.html
     <a class="button button--fill space-top" href="/work/" role="button">More work</a>
   </div>
 </section>
+{% endif %}
+{% assign psize = site.posts | size %}
+{% if psize > 0 %}
 <section>
   <h2 class="section__header"><span class="underline">Writing</span></h2>
   <div class="post-list">
@@ -88,3 +93,4 @@ permalink: index.html
     <a class="button button--fill space-top" href="/blog/" role="button">More writing</a>
   </div>
 </section>
+{% endif %}
