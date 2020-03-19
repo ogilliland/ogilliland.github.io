@@ -74,7 +74,7 @@ h1 {
   font-family: $font-primary;
   font-weight: 700;
   font-size: 4rem;
-  margin: 0.5em 0 0.25em 0;
+  margin: 0 0 0.25em 0;
   line-height: 1.25em;
 
   &.font-lg {
@@ -593,6 +593,10 @@ section {
     padding: 0.5rem 1rem;
   }
 
+  &__tag--space {
+    margin-right: 0.25rem;
+  }
+
   &__date {
     margin-left: 0.15rem;
   }
@@ -633,7 +637,6 @@ section {
   display: block;
   text-align: center;
   font-style: italic;
-  content: "\201C\00A0" attr(data-quote) "\00A0\201D";
   font-size: 2em;
 
   &::before {
@@ -678,6 +681,7 @@ section {
 
 .page {
   width: 60%;
+  min-height: calc(100vh - 25.5rem);
   margin: 6rem auto;
   text-align: justify;
 
@@ -780,6 +784,14 @@ section {
   }
 }
 
+#search-input {
+  width: 60%;
+  font-size: 2rem;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 1rem;
+  font-family: $font-primary;
+}
+
 /* === utility classes === */
 .flat {
   border: none;
@@ -820,6 +832,11 @@ section {
   color: $color-secondary;
   background-color: $color-on-secondary;
   padding: 0 0.75rem;
+}
+
+.attn {
+  color: $color-on-primary;
+  background-color: $color-primary;
 }
 
 .pill {
