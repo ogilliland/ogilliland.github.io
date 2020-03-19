@@ -42,3 +42,7 @@ collections:
   projects:
     output: true
     permalink: /work/:name/
+  experience:
+    output: false
+  education:
+    output: false
