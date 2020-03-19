@@ -9,39 +9,16 @@ permalink: index.html
     <span class="hero__description">Product Designer, Thing Maker, Artist, and Educator</span>
   </div>
 </section>
-{% for page in site.pages %}
-{% if page.name == 'about.md' %}
 <section>
   <h2 class="section__header"><span class="underline">About Me</span></h2>
   <div class="about">
     <div class="about__text">
-      {{ page.content }}
-      <a class="button button--fill" href="{{ page.url }}" role="button">Read more</a><a class="button" href="/assets/resume.pdf" role="button">View resume</a>
+      {% capture aboutme %}{% include about.md %}{% endcapture %}
+      {{ aboutme | markdownify }}
     </div>
-    <div class="about__timeline">
-      <div class="timeline__block">
-        <h3 class="timeline__title">HelloFresh Global</h3>
-        <span class="timeline__position">Product Owner, Supply Chain Tech</span>
-        <span class="timeline__tag pill">Work</span>
-        <span class="timeline__date info-text">2016 - Present</span>
-      </div>
-      <div class="timeline__block">
-        <h3 class="timeline__title">Massachusetts Institute of Technology</h3>
-        <span class="timeline__position">Exchange Program, GPA: 4.8 / 5.0</span>
-        <span class="timeline__tag pill">Education</span>
-        <span class="timeline__date info-text">2014 - 2015</span>
-      </div>
-      <div class="timeline__block timeline__block--last">
-        <h3 class="timeline__title">University of Cambridge</h3>
-        <span class="timeline__position">MEng, Manufacturing Engineering, 1st Class</span>
-        <span class="timeline__tag pill">Education</span>
-        <span class="timeline__date info-text">2012 - 2016</span>
-      </div>
-    </div>
+    <a class="button button--fill" href="/about/" role="button">Read more</a><a class="button" href="/resume/" role="button">View resume</a>
   </div>
 </section>
-{% endif %}
-{% endfor %}
 {% assign psize = site.projects | size %}
 {% if psize > 0 %}
 <section>

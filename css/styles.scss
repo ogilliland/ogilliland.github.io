@@ -391,7 +391,7 @@ section {
   }
 
   &__title {
-    margin-top: 0;
+    margin-top: 2rem;
   }
 
   &__img {
@@ -409,7 +409,7 @@ section {
     font-weight: 700;
     font-family: $font-primary;
     margin: auto;
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -423,19 +423,11 @@ section {
   overflow: hidden;
   width: 60%;
   margin: auto;
+  padding: 0 1rem 0 0;
+  text-align: center;
 
   &__text {
-    float: left;
-    width: 50%;
-    padding: 0 1rem 0 0;
-  }
-
-  &__timeline {
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    padding: 0.75rem 0 0 1rem;
+    text-align: justify;
   }
 }
 
