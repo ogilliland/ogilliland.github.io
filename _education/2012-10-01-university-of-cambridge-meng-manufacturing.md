@@ -1,5 +1,6 @@
 ---
 institution: "University of Cambridge"
+image: "/assets/icons/cambridge.png"
 address: "Cambridge, England"
 degree: "Master of Engineering (MEng), Manufacturing Engineering"
 grade: "1st Class"

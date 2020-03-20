@@ -1,5 +1,6 @@
 ---
 institution: "Massachusetts Institute of Technology"
+image: "/assets/icons/mit.png"
 address: "Cambridge, MA"
 degree: "Exchange Program (DDH)"
 grade: "GPA: 4.8 / 5.0"
