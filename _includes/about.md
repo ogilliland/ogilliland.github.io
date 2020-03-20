@@ -1,5 +1,5 @@
-I completed my master's degree at Cambridge University's [Institute for Manufacturing](https://www.ifm.eng.cam.ac.uk/){:target="_blank" .external} with a focus on product development and technology management. [...] creating innovative solutions to difficult problems through careful application of hardware and software.
+I completed my master's degree at Cambridge University's [Institute for Manufacturing](https://www.ifm.eng.cam.ac.uk/){:target="_blank" .external} with a focus on leadership, strategy, and technology management. I also spent a year at [Massachusetts Institute of Technology](https://www.mit.edu/){:target="_blank" .external} studying design and entrepreneurship. These days I work on building software products that people love.
 
-[...]
+At [HelloFresh](https://hellofresh.com/){:target="_blank" .external} I've led teams building an online recipe archive, a content management system (CMS), a suite of procurement tools for our operations team, and data infrastructure for decentralised real-time information streaming.
 
-In my free time I work on experimental [projects](/work/), sketch, and record music.
+In my free time I work on experimental [projects](/work/), sketch, [write](/blog/), and record music. Other than here, you can find me on [GitHub](https://github.com/ogilliland){:target="_blank" .external} and [Twitter](https://twitter.com/ollymg){:target="_blank" .external}.
