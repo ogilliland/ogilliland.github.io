@@ -12,7 +12,10 @@ description: "Results-driven and user focused Product Manager with 4+ years expe
   {% assign sorted = (site.experience | sort: 'start') | reverse %}
   {% for position in sorted %}
   <div class="timeline__block">
-    <h3 class="timeline__title"><b>{{ position.company }}</b>, {{ position.address }}</h3>
+  	{% if company != position.company %}
+    <span class="timeline__title"><b>{{ position.company }}</b>, {{ position.address }}</span>
+    {% endif %}
+    {% assign company = position.company %}
     <span class="timeline__position"><b>{{ position.title }}</b></span>
     <span class="timeline__date info-text">{{ position.start | date: "%b %Y" }} - {% if position.end %}{{ position.end | date: "%b %Y" }}{% else %}Present{% endif %}</span>
     {{ position.content }}
@@ -25,7 +28,7 @@ description: "Results-driven and user focused Product Manager with 4+ years expe
   {% assign sorted = (site.education | sort: 'end') | reverse %}
   {% for study in sorted %}
   <div class="timeline__block">
-    <h3 class="timeline__title"><b>{{ study.institution }}</b>, {{ study.address }}</h3>
+    <span class="timeline__title"><b>{{ study.institution }}</b>, {{ study.address }}</span>
     <span class="timeline__position"><b>{{ study.degree }}</b>, {{ study.grade }}</span>
     <span class="timeline__date info-text">{{ study.start | date: "%b %Y" }} - {% if study.end %}{{ study.end | date: "%b %Y" }}{% else %}Present{% endif %}</span>
     {{ study.content }}
