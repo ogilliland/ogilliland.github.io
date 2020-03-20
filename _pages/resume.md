@@ -11,10 +11,12 @@ description: "Results-driven and user focused Product Manager with 4+ years expe
 <div class="about__timeline">
   {% assign sorted = (site.experience | sort: 'start') | reverse %}
   {% for position in sorted %}
-  <div class="timeline__block">
-  	{% if company != position.company %}
+  {% if company != position.company %}
+  <div class="timeline__block timeline__block--logo" style="--bg-image: url('{{ position.image }}')">
     <span class="timeline__title"><b>{{ position.company }}</b>, {{ position.address }}</span>
-    {% endif %}
+  {% else %}
+  <div class="timeline__block">
+  {% endif %}
     {% assign company = position.company %}
     <span class="timeline__position"><b>{{ position.title }}</b></span>
     <span class="timeline__date info-text">{{ position.start | date: "%b %Y" }} - {% if position.end %}{{ position.end | date: "%b %Y" }}{% else %}Present{% endif %}</span>

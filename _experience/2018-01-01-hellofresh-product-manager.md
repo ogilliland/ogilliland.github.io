@@ -1,5 +1,6 @@
 ---
 company: "HelloFresh"
+image: "/assets/icons/hellofresh.png"
 address: "Berlin, Germany"
 title: "Product Manager"
 start: 2018-01-01

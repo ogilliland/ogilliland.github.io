@@ -441,36 +441,35 @@ section {
     margin-left: 4rem;
     height: 33%;
 
-    &::before {
+    &::after {
       content: "";
       position: absolute;
-      left: -2.5rem;
-      top: 0.65rem;
-      height: 1rem;
-      width: 1rem;
+      left: -2.45rem;
+      top: 0.25rem;
+      height: 0.75rem;
+      width: 0.75rem;
       border-radius: 50%;
       background-color: currentColor;
     }
 
-    &::after {
+    &--logo::after {
+      height: 3rem;
+      width: 3rem;
+      left: -3.55rem;
+      background-image: var(--bg-image);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
       content: "";
       position: absolute;
       left: -2.15rem;
       top: 0.65rem;
       height: 100%;
-      padding-bottom: 0.5rem;
-      width: 0.3rem;
+      padding-bottom: 0.6rem;
+      width: 0.15rem;
       background-color: currentColor;
-    }
-
-    &--last::after {
-      background: repeating-linear-gradient(
-        $color-on-secondary,
-        $color-on-secondary 0.5rem,
-        rgba(0, 0, 0, 0) 0.5rem,
-        rgba(0, 0, 0, 0) 1rem
-      );
-      height: 3rem;
     }
   }
 

@@ -1,5 +1,6 @@
 ---
 company: "HelloFresh"
+image: "/assets/icons/hellofresh.png"
 address: "Berlin, Germany"
 title: "Junior Product Manager"
 start: 2016-07-01

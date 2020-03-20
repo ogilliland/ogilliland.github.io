@@ -1,5 +1,6 @@
 ---
 company: "HelloFresh"
+image: "/assets/icons/hellofresh.png"
 address: "Berlin, Germany"
 title: "Senior Product Manager"
 start: 2020-01-01

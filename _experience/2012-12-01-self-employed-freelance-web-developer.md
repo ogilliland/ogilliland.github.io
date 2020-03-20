@@ -1,5 +1,6 @@
 ---
 company: "Self-employed"
+image: "/assets/icons/code.png"
 address: "Cheltenham, England"
 title: "Freelance Web Developer"
 start: 2012-12-01
