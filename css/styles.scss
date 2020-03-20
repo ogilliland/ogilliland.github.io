@@ -298,6 +298,10 @@ nav {
   }
 }
 
+ul {
+  margin-top: 0;
+}
+
 .info-text {
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -391,7 +395,7 @@ section {
   }
 
   &__title {
-    margin-top: 0;
+    margin-top: 2rem;
   }
 
   &__img {
@@ -409,7 +413,7 @@ section {
     font-weight: 700;
     font-family: $font-primary;
     margin: auto;
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -423,19 +427,11 @@ section {
   overflow: hidden;
   width: 60%;
   margin: auto;
+  padding: 0 1rem 0 0;
+  text-align: center;
 
   &__text {
-    float: left;
-    width: 50%;
-    padding: 0 1rem 0 0;
-  }
-
-  &__timeline {
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    padding: 0.75rem 0 0 1rem;
+    text-align: justify;
   }
 }
 
@@ -445,42 +441,43 @@ section {
     margin-left: 4rem;
     height: 33%;
 
-    &::before {
+    &::after {
       content: "";
       position: absolute;
-      left: -2.5rem;
-      top: 0.65rem;
-      height: 1rem;
-      width: 1rem;
+      left: -2.45rem;
+      top: 0.25rem;
+      height: 0.75rem;
+      width: 0.75rem;
       border-radius: 50%;
       background-color: currentColor;
     }
 
-    &::after {
+    &--logo::after {
+      height: 3rem;
+      width: 3rem;
+      left: -3.55rem;
+      background-image: var(--bg-image);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
       content: "";
       position: absolute;
       left: -2.15rem;
       top: 0.65rem;
       height: 100%;
-      padding-bottom: 0.5rem;
-      width: 0.3rem;
+      padding-bottom: 0.6rem;
+      width: 0.15rem;
       background-color: currentColor;
-    }
-
-    &--last::after {
-      background: repeating-linear-gradient(
-        $color-on-secondary,
-        $color-on-secondary 0.5rem,
-        rgba(0, 0, 0, 0) 0.5rem,
-        rgba(0, 0, 0, 0) 1rem
-      );
-      height: 3rem;
     }
   }
 
   &__title {
     margin: 0;
     white-space: nowrap;
+    font-size: 1.5rem;
+    font-style: italic;
   }
 
   &__position {
