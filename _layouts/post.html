@@ -13,9 +13,6 @@ layout: default
 		</span>
 		{% endif %}
 	</div>
-	{% if page.image %}
-	<div class="page__img img-container flat"><img src="{{ page.image }}"></div>
-	{% endif %}
 	{{ content }}
 	<footer>
 		{% include prevnext.html page = page %}
