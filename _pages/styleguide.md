@@ -42,7 +42,7 @@ Without author:
 
 ## Pull Quotes
 
-*When nothing is sure, everything is possible.*{:.pullquote-full}
+*When nothing is sure, everything is possible.*{:.pullquote}
 
 *You think water moves fast? You should see ice.*{:.pullquote-left data-quote="You think water moves fast? You should see ice."} It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
 
@@ -91,22 +91,22 @@ And another one[^2].
 ## Project List
 
 <div class="project-list full-width">
-  {% assign sorted = (site.projects | sort: 'date') | reverse %}
-  {% for post in sorted limit: 6 %}
-  <a class="no-underline" href="{{ post.url }}" aria-label="view project">
-    <div class="project">
-      {% if post.image %}
-      <img src="{{ post.image }}">
-      {% endif %}
-      <div class="project__content">
-        <h3 class="project__title">{{ post.title }}</h3>
-        {% for tag in post.tags %}
-        <span class="project__tag pill">{{ tag }}</span>
-        {% endfor %}
-      </div>
-    </div>
-  </a>
-  {% endfor %}
+	{% assign sorted = (site.projects | sort: 'date') | reverse %}
+	{% for post in sorted limit: 6 %}
+	<a class="no-underline" href="{{ post.url }}" aria-label="view project">
+		<div class="project">
+			{% if post.image %}
+			<img src="{{ post.image }}">
+			{% endif %}
+			<div class="project__content">
+				<h3 class="project__title">{{ post.title }}</h3>
+				{% for tag in post.tags %}
+				<span class="project__tag pill">{{ tag }}</span>
+				{% endfor %}
+			</div>
+		</div>
+	</a>
+	{% endfor %}
 </div>
 
 ## Post List
@@ -115,19 +115,19 @@ And another one[^2].
 	{% assign sorted = (site.posts | sort: 'date') | reverse %}
 	{% for post in sorted limit: 4 %}
 	<a class="no-underline" href="{{ post.url }}" aria-label="continue reading">
-	  <div class="post">
-	    {% if post.image %}
-	    <img src="{{ post.image }}">
-	    {% endif %}
-	    <div class="post__content">
-	      <h3 class="post__title">{{ post.title }}</h3>
-	      {% for tag in post.tags %}
-	      <span class="post__tag pill">{{ tag }}</span>
-	      {% endfor %}
-	      <span class="post__date info-text">{{ post.date | date: "%d %b %Y" }}</span>
-	      <span class="post__intro">{{ post.content | strip_html | truncate: 250 }}</span>
-	    </div>
-	  </div>
+		<div class="post">
+			{% if post.image %}
+			<img src="{{ post.image }}">
+			{% endif %}
+			<div class="post__content">
+				<h3 class="post__title">{{ post.title }}</h3>
+				{% for tag in post.tags %}
+				<span class="post__tag pill">{{ tag }}</span>
+				{% endfor %}
+				<span class="post__date info-text">{{ post.date | date: "%d %b %Y" }}</span>
+				<span class="post__intro">{{ post.content | strip_html | truncate: 250 }}</span>
+			</div>
+		</div>
 	</a>
 	{% endfor %}
 </div>
