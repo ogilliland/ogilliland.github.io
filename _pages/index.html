@@ -3,71 +3,71 @@ layout: default
 permalink: index.html
 ---
 <section class="hero">
-  <div class="hero__content">
-    <h1 class="hero__title font-lg"><span class="block">Hello, I'm </span><span class="knockout block">Oliver Gilliland</span></h1>
-    <div class="hero__img img-container round"><img src="/assets/profile.jpg" alt="profile picture"></div>
-    <span class="hero__description">Product Designer, Thing Maker, Artist, and Educator</span>
-  </div>
+	<div class="hero__content">
+		<h1 class="hero__title font-lg"><span class="block">Hello, I'm </span><span class="knockout block">Oliver Gilliland</span></h1>
+		<div class="hero__img img-container round"><img src="/assets/profile.jpg" alt="profile picture"></div>
+		<span class="hero__description">Product Manager, Thing Maker, <br />Artist, and Educator</span>
+	</div>
 </section>
 <section>
-  <h2 class="section__header"><span class="underline">About Me</span></h2>
-  <div class="about">
-    <div class="about__text">
-      {% capture aboutme %}{% include about.md %}{% endcapture %}
-      {{ aboutme | markdownify }}
-    </div>
-    <a class="button button--fill" href="/resume/" role="button">View resume</a>
-  </div>
+	<h2 class="section__header"><span class="underline">About Me</span></h2>
+	<div class="about">
+		<div class="about__text">
+			{% capture aboutme %}{% include about.md %}{% endcapture %}
+			{{ aboutme | markdownify }}
+		</div>
+		<a class="button button--fill" href="/resume/" role="button">View resume</a>
+	</div>
 </section>
 {% assign psize = site.projects | size %}
 {% if psize > 0 %}
 <section>
-  <h2 class="section__header"><span class="underline">Projects</span></h2>
-  <div class="project-list">
-    {% assign sorted = (site.projects | sort: 'date') | reverse %}
-    {% for post in sorted limit: 6 %}
-    <a class="no-underline" href="{{ post.url }}" aria-label="view project">
-      <div class="project">
-        {% if post.image %}
-        <img src="{{ post.image }}">
-        {% endif %}
-        <div class="project__content">
-          <h3 class="project__title">{{ post.title }}</h3>
-          {% for tag in post.tags %}
-          <span class="project__tag pill">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      </div>
-    </a>
-    {% endfor %}
-    <a class="button button--fill space-top" href="/work/" role="button">More work</a>
-  </div>
+	<h2 class="section__header"><span class="underline">Projects</span></h2>
+	<div class="project-list">
+		{% assign sorted = (site.projects | sort: 'date') | reverse %}
+		{% for post in sorted limit: 6 %}
+		<a class="no-underline" href="{{ post.url }}" aria-label="view project">
+			<div class="project">
+				{% if post.image %}
+				<img src="{{ post.image }}">
+				{% endif %}
+				<div class="project__content">
+					<h3 class="project__title">{{ post.title }}</h3>
+					{% for tag in post.tags %}
+					<span class="project__tag pill">{{ tag }}</span>
+					{% endfor %}
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+		<a class="button button--fill space-top" href="/work/" role="button">More work</a>
+	</div>
 </section>
 {% endif %}
 {% assign psize = site.posts | size %}
 {% if psize > 0 %}
 <section>
-  <h2 class="section__header"><span class="underline">Writing</span></h2>
-  <div class="post-list">
-    {% assign sorted = (site.posts | sort: 'date') | reverse %}
-    {% for post in sorted limit: 4 %}
-    <a class="no-underline" href="{{ post.url }}" aria-label="continue reading">
-      <div class="post">
-        {% if post.image %}
-        <img src="{{ post.image }}">
-        {% endif %}
-        <div class="post__content">
-          <h3 class="post__title">{{ post.title }}</h3>
-          {% for tag in post.tags %}
-          <span class="post__tag pill">{{ tag }}</span>
-          {% endfor %}
-          <span class="post__date info-text">{{ post.date | date: "%d %b %Y" }}</span>
-          <span class="post__intro">{{ post.content | strip_html | truncate: 250 }}</span>
-        </div>
-      </div>
-    </a>
-    {% endfor %}
-    <a class="button button--fill space-top" href="/blog/" role="button">More writing</a>
-  </div>
+	<h2 class="section__header"><span class="underline">Blog</span></h2>
+	<div class="post-list">
+		{% assign sorted = (site.posts | sort: 'date') | reverse %}
+		{% for post in sorted limit: 4 %}
+		<a class="no-underline" href="{{ post.url }}" aria-label="continue reading">
+			<div class="post">
+				{% if post.image %}
+				<img src="{{ post.image }}">
+				{% endif %}
+				<div class="post__content">
+					<h3 class="post__title">{{ post.title }}</h3>
+					{% for tag in post.tags %}
+					<span class="post__tag pill">{{ tag }}</span>
+					{% endfor %}
+					<span class="post__date info-text">{{ post.date | date: "%d %b %Y" }}</span>
+					<span class="post__intro">{{ post.content | strip_html | truncate: 250 }}</span>
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+		<a class="button button--fill space-top" href="/blog/" role="button">More writing</a>
+	</div>
 </section>
 {% endif %}

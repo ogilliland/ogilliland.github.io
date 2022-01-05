@@ -223,7 +223,7 @@ nav {
 .global-footer {
 	background-color: $color-acc-dark;
 	color: $color-on-acc-dark;
-	width: 100vw;
+	width: 100%;
 	padding: 4rem;
 	text-align: center;
 }
@@ -413,7 +413,6 @@ section {
 		font-weight: 700;
 		font-family: $font-primary;
 		margin: auto;
-		width: 80%;
 	}
 }
 
